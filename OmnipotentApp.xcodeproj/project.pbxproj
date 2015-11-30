@@ -196,6 +196,7 @@
 				TargetAttributes = {
 					7102B22F1C0BE93400497F95 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = B5BXCD45E5;
 					};
 					7102B2461C0BE93500497F95 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -403,7 +404,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = OmnipotentApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suorui.OmnipotentApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,7 +418,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = OmnipotentApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suorui.OmnipotentApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,6 +495,7 @@
 				7102B25D1C0BE93600497F95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7102B25E1C0BE93600497F95 /* Build configuration list for PBXNativeTarget "OmnipotentAppTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +504,7 @@
 				7102B2601C0BE93600497F95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7102B2611C0BE93600497F95 /* Build configuration list for PBXNativeTarget "OmnipotentAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +513,7 @@
 				7102B2631C0BE93600497F95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
