@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7102B2341C0BE93500497F95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102B2331C0BE93500497F95 /* AppDelegate.swift */; };
-		7102B2361C0BE93500497F95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102B2351C0BE93500497F95 /* ViewController.swift */; };
 		7102B2391C0BE93500497F95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7102B2371C0BE93500497F95 /* Main.storyboard */; };
 		7102B23C1C0BE93500497F95 /* OmnipotentApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7102B23A1C0BE93500497F95 /* OmnipotentApp.xcdatamodeld */; };
 		7102B23E1C0BE93500497F95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7102B23D1C0BE93500497F95 /* Assets.xcassets */; };
 		7102B2411C0BE93500497F95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7102B23F1C0BE93500497F95 /* LaunchScreen.storyboard */; };
 		7102B24C1C0BE93500497F95 /* OmnipotentAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102B24B1C0BE93500497F95 /* OmnipotentAppTests.swift */; };
 		7102B2571C0BE93500497F95 /* OmnipotentAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102B2561C0BE93500497F95 /* OmnipotentAppUITests.swift */; };
+		71056B841C0D79B00062B294 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71056B821C0D79B00062B294 /* ViewController.swift */; };
+		71056B851C0D79B00062B294 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71056B831C0D79B00062B294 /* AppDelegate.swift */; };
 		711060C91C0C133500B25979 /* SRUnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711060C81C0C133500B25979 /* SRUnderlineTextField.swift */; };
 		7142BA721C0C3E2E0021D588 /* SRAnimatedImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7142BA711C0C3E2E0021D588 /* SRAnimatedImagesView.swift */; };
 /* End PBXBuildFile section */
@@ -38,8 +38,6 @@
 
 /* Begin PBXFileReference section */
 		7102B2301C0BE93500497F95 /* OmnipotentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmnipotentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7102B2331C0BE93500497F95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7102B2351C0BE93500497F95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7102B2381C0BE93500497F95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7102B23B1C0BE93500497F95 /* OmnipotentApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OmnipotentApp.xcdatamodel; sourceTree = "<group>"; };
 		7102B23D1C0BE93500497F95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +49,8 @@
 		7102B2521C0BE93500497F95 /* OmnipotentAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmnipotentAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7102B2561C0BE93500497F95 /* OmnipotentAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmnipotentAppUITests.swift; sourceTree = "<group>"; };
 		7102B2581C0BE93500497F95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71056B821C0D79B00062B294 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		71056B831C0D79B00062B294 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		711060C81C0C133500B25979 /* SRUnderlineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUnderlineTextField.swift; sourceTree = "<group>"; };
 		7142BA701C0C3DE30021D588 /* OmnipotentApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OmnipotentApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		7142BA711C0C3E2E0021D588 /* SRAnimatedImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAnimatedImagesView.swift; sourceTree = "<group>"; };
@@ -108,8 +108,6 @@
 				711060C51C0C12DB00B25979 /* Controller */,
 				711060C61C0C12DB00B25979 /* Model */,
 				711060C71C0C12DB00B25979 /* View */,
-				7102B2331C0BE93500497F95 /* AppDelegate.swift */,
-				7102B2351C0BE93500497F95 /* ViewController.swift */,
 				7102B2371C0BE93500497F95 /* Main.storyboard */,
 				7102B23D1C0BE93500497F95 /* Assets.xcassets */,
 				7102B23F1C0BE93500497F95 /* LaunchScreen.storyboard */,
@@ -140,6 +138,8 @@
 		711060C51C0C12DB00B25979 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				71056B821C0D79B00062B294 /* ViewController.swift */,
+				71056B831C0D79B00062B294 /* AppDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -324,9 +324,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7102B2361C0BE93500497F95 /* ViewController.swift in Sources */,
+				71056B841C0D79B00062B294 /* ViewController.swift in Sources */,
 				711060C91C0C133500B25979 /* SRUnderlineTextField.swift in Sources */,
-				7102B2341C0BE93500497F95 /* AppDelegate.swift in Sources */,
+				71056B851C0D79B00062B294 /* AppDelegate.swift in Sources */,
 				7102B23C1C0BE93500497F95 /* OmnipotentApp.xcdatamodeld in Sources */,
 				7142BA721C0C3E2E0021D588 /* SRAnimatedImagesView.swift in Sources */,
 			);
