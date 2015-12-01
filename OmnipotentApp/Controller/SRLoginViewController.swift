@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, SRAnimatedImagesViewDelegate {
+class SRLoginViewController: UIViewController, SRAnimatedImagesViewDelegate {
     //MARK: - properties
     @IBOutlet weak var bkgView: SRAnimatedImagesView!
     
@@ -41,7 +41,7 @@ class ViewController: UIViewController, SRAnimatedImagesViewDelegate {
 
     //MARK: - login related methods
     @IBAction func login(sender: UIButton) {
-        view.setNeedsDisplay()
+        APPDELEGATE.rootViewCtrl?.closeLeftView()
     }
 
     @IBAction func findPwd(sender: UIButton) {
