@@ -15,6 +15,8 @@
 		7102B2411C0BE93500497F95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7102B23F1C0BE93500497F95 /* LaunchScreen.storyboard */; };
 		7102B24C1C0BE93500497F95 /* OmnipotentAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102B24B1C0BE93500497F95 /* OmnipotentAppTests.swift */; };
 		7102B2571C0BE93500497F95 /* OmnipotentAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102B2561C0BE93500497F95 /* OmnipotentAppUITests.swift */; };
+		711060C91C0C133500B25979 /* SRUnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711060C81C0C133500B25979 /* SRUnderlineTextField.swift */; };
+		7142BA721C0C3E2E0021D588 /* SRAnimatedImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7142BA711C0C3E2E0021D588 /* SRAnimatedImagesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,9 @@
 		7102B2521C0BE93500497F95 /* OmnipotentAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmnipotentAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7102B2561C0BE93500497F95 /* OmnipotentAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmnipotentAppUITests.swift; sourceTree = "<group>"; };
 		7102B2581C0BE93500497F95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		711060C81C0C133500B25979 /* SRUnderlineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUnderlineTextField.swift; sourceTree = "<group>"; };
+		7142BA701C0C3DE30021D588 /* OmnipotentApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OmnipotentApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		7142BA711C0C3E2E0021D588 /* SRAnimatedImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAnimatedImagesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +104,10 @@
 		7102B2321C0BE93500497F95 /* OmnipotentApp */ = {
 			isa = PBXGroup;
 			children = (
+				7142BA631C0C355C0021D588 /* Objective-C */,
+				711060C51C0C12DB00B25979 /* Controller */,
+				711060C61C0C12DB00B25979 /* Model */,
+				711060C71C0C12DB00B25979 /* View */,
 				7102B2331C0BE93500497F95 /* AppDelegate.swift */,
 				7102B2351C0BE93500497F95 /* ViewController.swift */,
 				7102B2371C0BE93500497F95 /* Main.storyboard */,
@@ -126,6 +135,61 @@
 				7102B2581C0BE93500497F95 /* Info.plist */,
 			);
 			path = OmnipotentAppUITests;
+			sourceTree = "<group>";
+		};
+		711060C51C0C12DB00B25979 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		711060C61C0C12DB00B25979 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		711060C71C0C12DB00B25979 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				711060C81C0C133500B25979 /* SRUnderlineTextField.swift */,
+				7142BA711C0C3E2E0021D588 /* SRAnimatedImagesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7142BA631C0C355C0021D588 /* Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				7142BA701C0C3DE30021D588 /* OmnipotentApp-Bridging-Header.h */,
+				7142BA641C0C355C0021D588 /* Controller */,
+				7142BA651C0C355C0021D588 /* Model */,
+				7142BA661C0C355C0021D588 /* View */,
+			);
+			path = "Objective-C";
+			sourceTree = "<group>";
+		};
+		7142BA641C0C355C0021D588 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7142BA651C0C355C0021D588 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7142BA661C0C355C0021D588 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +325,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7102B2361C0BE93500497F95 /* ViewController.swift in Sources */,
+				711060C91C0C133500B25979 /* SRUnderlineTextField.swift in Sources */,
 				7102B2341C0BE93500497F95 /* AppDelegate.swift in Sources */,
 				7102B23C1C0BE93500497F95 /* OmnipotentApp.xcdatamodeld in Sources */,
+				7142BA721C0C3E2E0021D588 /* SRAnimatedImagesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,12 +471,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = OmnipotentApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suorui.OmnipotentApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OmnipotentApp/Objective-C/OmnipotentApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -419,12 +488,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = OmnipotentApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suorui.OmnipotentApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OmnipotentApp/Objective-C/OmnipotentApp-Bridging-Header.h";
 			};
 			name = Release;
 		};

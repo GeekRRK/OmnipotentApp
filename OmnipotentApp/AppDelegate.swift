@@ -9,6 +9,11 @@
 import UIKit
 import CoreData
 
+let SCREENWITH = UIScreen.mainScreen().bounds.size.width
+let SCREENHEIGHT = UIScreen.mainScreen().bounds.size.height
+let ISIPHONE = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone
+let IPHONE4S = ISIPHONE && SCREENHEIGHT <= 480.0 ? true : false
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
