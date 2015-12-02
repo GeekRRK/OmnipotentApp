@@ -14,6 +14,7 @@ let SCREENHEIGHT = UIScreen.mainScreen().bounds.size.height
 let ISIPHONE = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone
 let IPHONE4S = ISIPHONE && SCREENHEIGHT <= 480.0 ? true : false
 let APPCOLORORANGE = UIColor(red: 242.0 / 255.0, green: 99.0 / 255.0, blue: 38.0 / 255.0, alpha: 1.0)
+let APPCOLORBLUE = UIColor(red: 147.0 / 255.0, green: 224.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
 let APPDELEGATE = UIApplication.sharedApplication().delegate as! AppDelegate
 
 @UIApplicationMain

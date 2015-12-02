@@ -8,14 +8,13 @@
 
 import UIKit
 
-class SRTabBarController: UITabBarController {
+class SRTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.tabBar.tintColor = APPCOLORORANGE
-        self.tabBar.barStyle = .Black
+        self.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,5 +35,21 @@ class SRTabBarController: UITabBarController {
 
     @IBAction func openLeftView(sender: UIBarButtonItem) {
         APPDELEGATE.rootViewCtrl?.openLeftView()
+    }
+    
+    //The suppose of this method is that the title of navigationitem can't appear when a tabbarcontroller is the rootviewcontroller of navigationcontroller.
+    //Rember set the tabbarcontroller.navigationitem.title to the title of controller in index 0 because first time this method couldn't be invoked.
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+        let index = tabBarController.selectedIndex
+        switch index {
+        case 0:
+            self.title = "首页"
+        case 1:
+            self.title = "消息"
+        case 2:
+            self.title = "设置"
+        default:
+            self.title = ""
+        }
     }
 }

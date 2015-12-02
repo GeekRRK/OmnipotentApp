@@ -22,6 +22,7 @@
 		71056B9A1C0DA42D0062B294 /* SRHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71056B991C0DA42D0062B294 /* SRHomePageViewController.swift */; };
 		711060C91C0C133500B25979 /* SRUnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711060C81C0C133500B25979 /* SRUnderlineTextField.swift */; };
 		7142BA721C0C3E2E0021D588 /* SRAnimatedImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7142BA711C0C3E2E0021D588 /* SRAnimatedImagesView.swift */; };
+		71FA85831C0E96B100F6F4B1 /* SRMsgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA85821C0E96B100F6F4B1 /* SRMsgViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		711060C81C0C133500B25979 /* SRUnderlineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUnderlineTextField.swift; sourceTree = "<group>"; };
 		7142BA701C0C3DE30021D588 /* OmnipotentApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OmnipotentApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		7142BA711C0C3E2E0021D588 /* SRAnimatedImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAnimatedImagesView.swift; sourceTree = "<group>"; };
+		71FA85821C0E96B100F6F4B1 /* SRMsgViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRMsgViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				71056B831C0D79B00062B294 /* AppDelegate.swift */,
 				71056B891C0D81DE0062B294 /* SRTabBarController.swift */,
 				71056B991C0DA42D0062B294 /* SRHomePageViewController.swift */,
+				71FA85821C0E96B100F6F4B1 /* SRMsgViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				71056B851C0D79B00062B294 /* AppDelegate.swift in Sources */,
 				71056B981C0DA06A0062B294 /* KxMenu.m in Sources */,
 				71056B9A1C0DA42D0062B294 /* SRHomePageViewController.swift in Sources */,
+				71FA85831C0E96B100F6F4B1 /* SRMsgViewController.swift in Sources */,
 				7102B23C1C0BE93500497F95 /* OmnipotentApp.xcdatamodeld in Sources */,
 				71056B921C0D902F0062B294 /* UIView_extra.m in Sources */,
 				71056B8A1C0D81DE0062B294 /* SRTabBarController.swift in Sources */,

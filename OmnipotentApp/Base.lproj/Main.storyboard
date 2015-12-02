@@ -133,7 +133,7 @@
         <!--消息-->
         <scene sceneID="c0B-8H-aYP">
             <objects>
-                <viewController title="消息" id="5YG-l8-ahn" sceneMemberID="viewController">
+                <viewController title="消息" id="5YG-l8-ahn" customClass="SRMsgViewController" customModule="OmnipotentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j8O-Bi-2iC"/>
                         <viewControllerLayoutGuide type="bottom" id="Ztk-mS-ktz"/>
@@ -142,10 +142,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="消息" image="tab_message" selectedImage="tab_message_sel" id="669-ae-hBe"/>
-                    <navigationItem key="navigationItem" title="消息" id="IBi-Bg-1c8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ij-P0-mnE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,7 +153,7 @@
         <!--设置-->
         <scene sceneID="Bz5-cL-CHE">
             <objects>
-                <viewController id="qwQ-Aa-VHZ" sceneMemberID="viewController">
+                <viewController title="设置" id="qwQ-Aa-VHZ" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DNh-1t-7mp"/>
                         <viewControllerLayoutGuide type="bottom" id="XjX-Gh-Cqp"/>
@@ -163,10 +162,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="设置" image="tab_setting" selectedImage="tab_setting_sel" id="7Zi-7b-eDp"/>
-                    <navigationItem key="navigationItem" title="设置" id="G7m-e0-PeV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3OH-lO-Rsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -175,8 +173,7 @@
         <!--首页-->
         <scene sceneID="sqi-Rk-kTd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OAI-Cg-Cl9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController title="首页" id="WcC-M5-xg4" sceneMemberID="viewController">
+                <viewController title="首页" id="WcC-M5-xg4" customClass="SRHomePageViewController" customModule="OmnipotentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AhI-Pf-E83"/>
                         <viewControllerLayoutGuide type="bottom" id="QHA-2K-hvp"/>
@@ -184,12 +181,27 @@
                     <view key="view" contentMode="scaleToFill" id="Mf8-rK-Ya2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkp-TE-sVG">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <animations/>
+                            </scrollView>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gkp-TE-sVG" firstAttribute="leading" secondItem="Mf8-rK-Ya2" secondAttribute="leadingMargin" constant="-20" id="BcA-Nv-Ce9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gkp-TE-sVG" secondAttribute="trailing" constant="-20" id="BzO-Hi-Yo1"/>
+                            <constraint firstItem="QHA-2K-hvp" firstAttribute="top" secondItem="gkp-TE-sVG" secondAttribute="bottom" id="JJB-hZ-iaF"/>
+                            <constraint firstItem="gkp-TE-sVG" firstAttribute="top" secondItem="AhI-Pf-E83" secondAttribute="bottom" id="qKI-XY-xpq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="首页" image="tab_netwo" selectedImage="tab_netwo_sel" id="MrS-Ir-gxj"/>
-                    <navigationItem key="navigationItem" title="首页" id="jVe-Fd-3Gx"/>
+                    <connections>
+                        <outlet property="scrollView" destination="gkp-TE-sVG" id="lOH-Ic-4fl"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OAI-Cg-Cl9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1912" y="-240"/>
         </scene>
@@ -201,7 +213,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
-                        <color key="barTintColor" red="1" green="0.4045631059" blue="0.091197558499999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="2uG-Nn-C12" kind="relationship" relationship="rootViewController" id="dfb-58-ZvQ"/>
@@ -211,11 +231,11 @@
             </objects>
             <point key="canvasLocation" x="335" y="429"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--首页-->
         <scene sceneID="CiA-sO-W9v">
             <objects>
-                <tabBarController id="2uG-Nn-C12" customClass="SRTabBarController" customModule="OmnipotentApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="niR-Ac-ivy">
+                <tabBarController storyboardIdentifier="tabBarCtrl" id="2uG-Nn-C12" customClass="SRTabBarController" customModule="OmnipotentApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="首页" id="niR-Ac-ivy">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="4fY-pJ-Riq">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -228,6 +248,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="WcC-M5-xg4" kind="relationship" relationship="viewControllers" id="Sv3-bK-uWN"/>
