@@ -9,28 +9,15 @@
 import UIKit
 import CoreData
 
-let SCREENWITH = UIScreen.mainScreen().bounds.size.width
-let SCREENHEIGHT = UIScreen.mainScreen().bounds.size.height
-let ISIPHONE = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone
-let IPHONE4S = ISIPHONE && SCREENHEIGHT <= 480.0 ? true : false
-let APPCOLORORANGE = UIColor(red: 242.0 / 255.0, green: 99.0 / 255.0, blue: 38.0 / 255.0, alpha: 1.0)
-let APPCOLORBLUE = UIColor(red: 147.0 / 255.0, green: 224.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
-let APPDELEGATE = UIApplication.sharedApplication().delegate as! AppDelegate
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var rootViewCtrl: LeftSlideViewController?
+    var mainViewNavCtrl: UINavigationController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let story = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let leftSlideViewCtrl: SRLoginViewController = story.instantiateViewControllerWithIdentifier("loginCtrl") as! SRLoginViewController
-        let mainViewCtrl: UINavigationController = story.instantiateViewControllerWithIdentifier("tabBarCtrlNavCtrl") as! UINavigationController
-        self.rootViewCtrl = LeftSlideViewController(leftView: leftSlideViewCtrl, andMainView: mainViewCtrl)
-        self.window?.rootViewController = rootViewCtrl
         
         return true
     }

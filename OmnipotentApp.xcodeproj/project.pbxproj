@@ -20,7 +20,9 @@
 		71056B921C0D902F0062B294 /* UIView_extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 71056B901C0D902F0062B294 /* UIView_extra.m */; };
 		71056B981C0DA06A0062B294 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 71056B971C0DA06A0062B294 /* KxMenu.m */; };
 		71056B9A1C0DA42D0062B294 /* SRHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71056B991C0DA42D0062B294 /* SRHomePageViewController.swift */; };
+		710E013B1C1019C90035E244 /* SRSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710E013A1C1019C90035E244 /* SRSettingViewController.swift */; };
 		711060C91C0C133500B25979 /* SRUnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711060C81C0C133500B25979 /* SRUnderlineTextField.swift */; };
+		711797561C117D3D0048D860 /* SRUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711797551C117D3D0048D860 /* SRUtil.swift */; };
 		7142BA721C0C3E2E0021D588 /* SRAnimatedImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7142BA711C0C3E2E0021D588 /* SRAnimatedImagesView.swift */; };
 		71FA85831C0E96B100F6F4B1 /* SRMsgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA85821C0E96B100F6F4B1 /* SRMsgViewController.swift */; };
 /* End PBXBuildFile section */
@@ -65,7 +67,9 @@
 		71056B961C0DA06A0062B294 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		71056B971C0DA06A0062B294 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		71056B991C0DA42D0062B294 /* SRHomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRHomePageViewController.swift; sourceTree = "<group>"; };
+		710E013A1C1019C90035E244 /* SRSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRSettingViewController.swift; sourceTree = "<group>"; };
 		711060C81C0C133500B25979 /* SRUnderlineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUnderlineTextField.swift; sourceTree = "<group>"; };
+		711797551C117D3D0048D860 /* SRUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUtil.swift; sourceTree = "<group>"; };
 		7142BA701C0C3DE30021D588 /* OmnipotentApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OmnipotentApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		7142BA711C0C3E2E0021D588 /* SRAnimatedImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAnimatedImagesView.swift; sourceTree = "<group>"; };
 		71FA85821C0E96B100F6F4B1 /* SRMsgViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRMsgViewController.swift; sourceTree = "<group>"; };
@@ -183,11 +187,13 @@
 		711060C51C0C12DB00B25979 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				711797551C117D3D0048D860 /* SRUtil.swift */,
 				71056B821C0D79B00062B294 /* SRLoginViewController.swift */,
 				71056B831C0D79B00062B294 /* AppDelegate.swift */,
 				71056B891C0D81DE0062B294 /* SRTabBarController.swift */,
 				71056B991C0DA42D0062B294 /* SRHomePageViewController.swift */,
 				71FA85821C0E96B100F6F4B1 /* SRMsgViewController.swift */,
+				710E013A1C1019C90035E244 /* SRSettingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -376,12 +382,14 @@
 				71056B911C0D902F0062B294 /* LeftSlideViewController.m in Sources */,
 				711060C91C0C133500B25979 /* SRUnderlineTextField.swift in Sources */,
 				71056B851C0D79B00062B294 /* AppDelegate.swift in Sources */,
+				711797561C117D3D0048D860 /* SRUtil.swift in Sources */,
 				71056B981C0DA06A0062B294 /* KxMenu.m in Sources */,
 				71056B9A1C0DA42D0062B294 /* SRHomePageViewController.swift in Sources */,
 				71FA85831C0E96B100F6F4B1 /* SRMsgViewController.swift in Sources */,
 				7102B23C1C0BE93500497F95 /* OmnipotentApp.xcdatamodeld in Sources */,
 				71056B921C0D902F0062B294 /* UIView_extra.m in Sources */,
 				71056B8A1C0D81DE0062B294 /* SRTabBarController.swift in Sources */,
+				710E013B1C1019C90035E244 /* SRSettingViewController.swift in Sources */,
 				7142BA721C0C3E2E0021D588 /* SRAnimatedImagesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

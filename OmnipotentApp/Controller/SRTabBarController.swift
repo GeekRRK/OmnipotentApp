@@ -15,6 +15,17 @@ class SRTabBarController: UITabBarController, UITabBarControllerDelegate {
 
         // Do any additional setup after loading the view.
         self.delegate = self
+        
+        let leftItem = UIButton(frame: CGRectMake(0, 0, 30, 30))
+        leftItem.layer.masksToBounds = true
+        leftItem.layer.cornerRadius = leftItem.width * 0.5
+        leftItem.setBackgroundImage(UIImage(named: "portrait"), forState: .Normal)
+        leftItem.addTarget(self, action: "revealLeftView:", forControlEvents: .TouchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftItem)
+    }
+    
+    func revealLeftView(sender: UIButton) {
+        APPDELEGATE.rootViewCtrl?.openLeftView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,10 +43,6 @@ class SRTabBarController: UITabBarController, UITabBarControllerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
-    @IBAction func openLeftView(sender: UIBarButtonItem) {
-        APPDELEGATE.rootViewCtrl?.openLeftView()
-    }
     
     //The suppose of this method is that the title of navigationitem can't appear when a tabbarcontroller is the rootviewcontroller of navigationcontroller.
     //Rember set the tabbarcontroller.navigationitem.title to the title of controller in index 0 because first time this method couldn't be invoked.

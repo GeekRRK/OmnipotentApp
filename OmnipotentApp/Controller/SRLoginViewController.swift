@@ -11,7 +11,7 @@ import UIKit
 class SRLoginViewController: UIViewController, SRAnimatedImagesViewDelegate {
     //MARK: - properties
     @IBOutlet weak var bkgView: SRAnimatedImagesView!
-    
+    @IBOutlet weak var loginBtn: UIButton!
     
     //MARK: - system methods
     deinit {
@@ -25,23 +25,42 @@ class SRLoginViewController: UIViewController, SRAnimatedImagesViewDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
+        SRUtil.customizeNavBar(self.navigationController?.navigationBar)
+        
+        self.bkgView.hidden = false
         bkgView.startAnimating()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        SRUtil.deCustomizeNavBar(self.navigationController?.navigationBar)
+        self.bkgView.hidden = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.loginBtn.setBackgroundImage(SRUtil.createImageWithColor(UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: 0.6)), forState: .Normal)
+        self.loginBtn.setBackgroundImage(SRUtil.createImageWithColor(UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: 0.8)), forState: .Highlighted)
+        
         //Register notifications about keyboard
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: self.view.window)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: self.view.window)
         
-        bkgView.delegate = self;
+        bkgView.delegate = self
     }
 
     //MARK: - login related methods
     @IBAction func login(sender: UIButton) {
-        APPDELEGATE.rootViewCtrl?.closeLeftView()
+        self.view.endEditing(true)
+        
+        let story = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let leftSlideViewCtrl: UINavigationController = story.instantiateViewControllerWithIdentifier("settingNavCtrl") as! UINavigationController
+        APPDELEGATE.mainViewNavCtrl = story.instantiateViewControllerWithIdentifier("tabBarCtrlNavCtrl") as? UINavigationController
+        APPDELEGATE.rootViewCtrl = LeftSlideViewController(leftView: leftSlideViewCtrl, andMainView: APPDELEGATE.mainViewNavCtrl)
+        APPDELEGATE.window?.rootViewController = APPDELEGATE.rootViewCtrl
+        
+        self.performSegueWithIdentifier("loginSuccess", sender: nil)
     }
 
     @IBAction func findPwd(sender: UIButton) {
@@ -60,19 +79,18 @@ class SRLoginViewController: UIViewController, SRAnimatedImagesViewDelegate {
     }
     
     //MARK: - response to notification about keyboard
-    //self.bkgView is a subclass of UIControl， this action is supposed to hide keyboard.
-    @IBAction func touchBkgView(sender: SRAnimatedImagesView) {
-        self.view .endEditing(true)
+    //this action is supposed to hide keyboard.
+    @IBAction func touchBkgView(sender: UIControl) {
+        self.view.endEditing(true)
     }
+    
     
     func keyboardWillHide(notif: NSNotification) {
         if IPHONE4S == false {
             return;
         }
         
-        UIView .animateWithDuration(0.25, animations: {
-            self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
-        })
+        self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
     }
     
     func keyboardWillShow(notif: NSNotification) {
@@ -80,9 +98,7 @@ class SRLoginViewController: UIViewController, SRAnimatedImagesViewDelegate {
             return;
         }
         
-        UIView .animateWithDuration(0.25, animations: {
-            self.view.frame = CGRectMake(0, -120, self.view.frame.size.width, self.view.frame.size.height)
-        })
+        self.view.frame = CGRectMake(0, -110, self.view.frame.size.width, self.view.frame.size.height)
     }
 }
 

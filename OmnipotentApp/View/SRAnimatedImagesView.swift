@@ -13,7 +13,7 @@ protocol SRAnimatedImagesViewDelegate {
     mutating func animatedImagesView(animatedImagesView: SRAnimatedImagesView, imageAtIndex: Int) -> UIImage
 }
 
-class SRAnimatedImagesView: UIControl {
+class SRAnimatedImagesView: UIView {
     //MARK: - constant
     let defaultTimePerImage: CGFloat = 20.0
     let noImageDisplayingIndex: Int = -1

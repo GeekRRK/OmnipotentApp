@@ -13,28 +13,34 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     func customizeNavigationItem() {
-        //Make navigationbar transparent.
-        let navClearBkg = UIImage(named: "TransparentPixel")
-        self.navigationController?.navigationBar.setBackgroundImage(navClearBkg, forBarMetrics: .Default)
-        self.navigationController?.navigationBar.shadowImage = navClearBkg
-        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Setting"), style: .Plain, target: self, action: "rightBarButtonItemClicked:")
+        SRUtil.customizeNavBar(self.navigationController?.navigationBar)
+        
+        let rightItem = UIButton(frame: CGRectMake(0, 0, 30, 30))
+        rightItem.layer.masksToBounds = true
+        rightItem.layer.cornerRadius = rightItem.width * 0.5
+        rightItem.setBackgroundImage(UIImage(named: "menu"), forState: .Normal)
+        rightItem.addTarget(self, action: "rightBarButtonItemClicked:", forControlEvents: .TouchUpInside)
+        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightItem)
         
         //Build titleView of navigationitem.
-        let centerView = UITextField(frame: CGRectMake(44, 6, 232, 30))
+        let centerView = UITextField(frame: CGRectMake(60, 7, self.view.width - 30 * 2 - 60, 30))
         centerView.backgroundColor = UIColor.whiteColor()
         centerView.tintColor = UIColor.lightGrayColor()
-        let leftView = UIView(frame: CGRectMake(0, 0, 5, 30))
+        let leftView = UIView(frame: CGRectMake(0, 0, 40, 30))
+//        let searchIcon = UIImageView(frame: CGRectMake(5, 0, 30, 30))
+//        searchIcon.image = UIImage(named: "")
         centerView.leftViewMode = .Always
         centerView.leftView = leftView
         centerView.clearButtonMode = .WhileEditing
+        centerView.placeholder = "测试数据"
         self.tabBarController?.navigationItem.titleView = centerView
     }
     
     func decustomizeNavigationItem() {
-        self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: .Default)
-        self.navigationController?.navigationBar.shadowImage = nil
+        SRUtil.deCustomizeNavBar(self.navigationController?.navigationBar)
         self.tabBarController?.navigationItem.rightBarButtonItem = nil
         self.tabBarController?.navigationItem.titleView = nil
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clearColor()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -46,9 +52,7 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func hideNavBar(sender: UIButton) {
-        UIView.animateWithDuration(2, animations: {
-            self.navigationController?.navigationBarHidden = true
-        })
+        
     }
     
     override func viewDidLoad() {
@@ -95,7 +99,23 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func chooseItem(sender:AnyObject) {
-        
+        self.view.backgroundColor = UIColor.greenColor()
+        UIView.animateWithDuration(0.5, animations: {
+            self.navigationController?.navigationBar.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0)
+            }, completion: {
+                (Bool) in
+                UIView.animateWithDuration(1.5, animations: {
+                    self.navigationController?.navigationBar.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.4)
+                    }, completion: {
+                        (Bool) in
+                        UIView.animateWithDuration(2.0, animations: {
+                            self.navigationController?.navigationBar.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.1)
+                            }, completion: {
+                                (Bool) in
+                                
+                        })
+                })
+        })
     }
     
     override func didReceiveMemoryWarning() {
