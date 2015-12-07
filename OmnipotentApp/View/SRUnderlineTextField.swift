@@ -9,6 +9,8 @@
 import UIKit
 
 class SRUnderlineTextField: UITextField {
+    var highlited: Bool?
+    
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
@@ -17,7 +19,11 @@ class SRUnderlineTextField: UITextField {
         let context: CGContextRef = UIGraphicsGetCurrentContext()!;
         
         //Set the line color and width
-        CGContextSetStrokeColorWithColor(context, UIColor(red: 161, green: 163, blue: 168, alpha: 0.2).CGColor);
+        if self.highlited == true {
+            CGContextSetStrokeColorWithColor(context, COLOR_LOGINBTN_HIGHTED.CGColor);
+        } else {
+            CGContextSetStrokeColorWithColor(context, COLOR_UNDERLINE_WHITE.CGColor);
+        }
         CGContextSetLineWidth(context, 1.0);
         
         //Start a new Path
@@ -40,5 +46,4 @@ class SRUnderlineTextField: UITextField {
         CGContextClosePath(context);
         CGContextStrokePath(context);
     }
-
 }

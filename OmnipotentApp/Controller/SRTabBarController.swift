@@ -9,7 +9,7 @@
 import UIKit
 
 class SRTabBarController: UITabBarController, UITabBarControllerDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,14 +18,22 @@ class SRTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         let leftItem = UIButton(frame: CGRectMake(0, 0, 30, 30))
         leftItem.layer.masksToBounds = true
-        leftItem.layer.cornerRadius = leftItem.width * 0.5
+        leftItem.layer.cornerRadius = leftItem.frame.width * 0.5
         leftItem.setBackgroundImage(UIImage(named: "portrait"), forState: .Normal)
         leftItem.addTarget(self, action: "revealLeftView:", forControlEvents: .TouchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftItem)
+        
+//        self.view.userInteractionEnabled = true
+//        let tap = UITapGestureRecognizer(target: self, action: "tap")
+//        self.view.addGestureRecognizer(tap)
     }
     
+//    func tap() {
+//        APPDELEGATE.drawerVC?.close()
+//    }
+    
     func revealLeftView(sender: UIButton) {
-        APPDELEGATE.rootViewCtrl?.openLeftView()
+        APPDELEGATE.drawerVC?.open()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,8 +57,6 @@ class SRTabBarController: UITabBarController, UITabBarControllerDelegate {
     func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
         let index = tabBarController.selectedIndex
         switch index {
-        case 0:
-            self.title = "首页"
         case 1:
             self.title = "消息"
         case 2:

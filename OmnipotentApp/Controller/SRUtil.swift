@@ -12,7 +12,11 @@ let SCREENWITH = UIScreen.mainScreen().bounds.size.width
 let SCREENHEIGHT = UIScreen.mainScreen().bounds.size.height
 let ISIPHONE = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone
 let IPHONE4S = ISIPHONE && SCREENHEIGHT <= 480.0 ? true : false
-let APPCOLORBLUE = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: 1.0)
+
+let COLOR_UNDERLINE_WHITE = UIColor(red: 161, green: 163, blue: 168, alpha: 0.2)
+let COLOR_LOGINBTN_NORMAL = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: 0.6)
+let COLOR_LOGINBTN_HIGHTED = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: 0.8)
+
 let APPDELEGATE = UIApplication.sharedApplication().delegate as! AppDelegate
 
 class SRUtil: NSObject {

@@ -8,39 +8,52 @@
 
 import UIKit
 
-class SRHomePageViewController: UIViewController, UIScrollViewDelegate {
+class SRHomePageViewController: UIViewController, UIScrollViewDelegate, ZWAdViewDelagate {
     
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    let centerView: UITextField = UITextField(frame: CGRectMake(10, 150, SCREENWITH - 20, 30))
+    let adScrollView = ZWAdView(frame: CGRectMake(0, -64, SCREENWITH, 200))
+    
+    var navBarBgColorAlpha: CGFloat = 0.0
     
     func customizeNavigationItem() {
         SRUtil.customizeNavBar(self.navigationController?.navigationBar)
         
+        APPDELEGATE.window?.addSubview(APPDELEGATE.statusView)
+        
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: navBarBgColorAlpha)
+        
+        //Build leftItem of navigationitem
         let rightItem = UIButton(frame: CGRectMake(0, 0, 30, 30))
         rightItem.layer.masksToBounds = true
-        rightItem.layer.cornerRadius = rightItem.width * 0.5
-        rightItem.setBackgroundImage(UIImage(named: "menu"), forState: .Normal)
+        rightItem.layer.cornerRadius = rightItem.frame.width * 0.5
+        rightItem.setBackgroundImage(UIImage(named: "avatar"), forState: .Normal)
         rightItem.addTarget(self, action: "rightBarButtonItemClicked:", forControlEvents: .TouchUpInside)
         self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightItem)
         
         //Build titleView of navigationitem.
-        let centerView = UITextField(frame: CGRectMake(60, 7, self.view.width - 30 * 2 - 60, 30))
         centerView.backgroundColor = UIColor.whiteColor()
         centerView.tintColor = UIColor.lightGrayColor()
-        let leftView = UIView(frame: CGRectMake(0, 0, 40, 30))
-//        let searchIcon = UIImageView(frame: CGRectMake(5, 0, 30, 30))
-//        searchIcon.image = UIImage(named: "")
+        
+        let leftView = UIView(frame: CGRectMake(0, 0, 5, 30))
         centerView.leftViewMode = .Always
         centerView.leftView = leftView
         centerView.clearButtonMode = .WhileEditing
         centerView.placeholder = "测试数据"
-        self.tabBarController?.navigationItem.titleView = centerView
+        self.navigationController?.view.addSubview(centerView)
     }
     
     func decustomizeNavigationItem() {
         SRUtil.deCustomizeNavBar(self.navigationController?.navigationBar)
+        
+        APPDELEGATE.statusView.removeFromSuperview()
+        
         self.tabBarController?.navigationItem.rightBarButtonItem = nil
         self.tabBarController?.navigationItem.titleView = nil
         self.navigationController?.navigationBar.backgroundColor = UIColor.clearColor()
+        
+        centerView.removeFromSuperview()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -51,38 +64,82 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate {
         self.decustomizeNavigationItem()
     }
     
-    func hideNavBar(sender: UIButton) {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         self.scrollView.delegate = self
         
-        let mainRect = CGRectMake(10, -64, self.view.width - 20, 250)
-        let mainView = UIView(frame: mainRect)
-        mainView.backgroundColor = UIColor.grayColor()
-        self.scrollView.addSubview(mainView)
-        let btn = UIButton(frame: CGRectMake(30, 30, 100, 50))
-        btn.backgroundColor = UIColor.whiteColor()
-        mainView.addSubview(btn)
-        btn.addTarget(self, action: "hideNavBar:", forControlEvents: .TouchUpInside)
+        let imageArray = [
+            "http://cdn.duitang.com/uploads/item/201210/31/20121031085212_Kv4zZ.thumb.600_0.jpeg",
+            "http://img5.duitang.com/uploads/item/201307/09/20130709201608_t5BJF.jpeg",
+            "http://mg.soupingguo.com/bizhi/big/10/350/642/10350642.jpg",
+            "http://iphone.tgbus.com/UploadFiles/201301/20130130145233400.jpg"
+        ]
         
-        var rect = CGRectMake(10, -64 + 250 + 20, self.view.width - 20, 100)
+        adScrollView.delegate = self
+        adScrollView.adDataArray = NSMutableArray(array: imageArray)
+        adScrollView.hidePageControl = true
+        adScrollView.adAutoplay = true
+        adScrollView.adPeriodTime = 2.5
+        adScrollView.placeImageSource = "avatar"
+        adScrollView.loadAdDataThenStart()
+        self.scrollView.addSubview(adScrollView)
+        
+        var rect = CGRectMake(10, -64 + adScrollView.frame.height + 20, self.view.frame.width - 20, 100)
         for _ in 0..<4 {
             let view = UIView(frame: rect)
-            view.backgroundColor = UIColor.whiteColor()
+            view.backgroundColor = COLOR_LOGINBTN_NORMAL
             self.scrollView.addSubview(view)
             rect.origin.y = rect.origin.y + rect.height + 10
         }
         
-        self.scrollView.contentSize = CGSizeMake(self.view.width, rect.origin.y)
+        self.scrollView.contentSize = CGSizeMake(self.view.frame.width, rect.origin.y)
     }
     
+    //MARK: - ZWAdViewDelagate
+    func adView(adView: ZWAdView!, didDeselectAdAtNum num: Int) {
+        print("\(num)")
+    }
+    
+    //MARK: - UISrollViewDelegate
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        
+        let base: CGFloat = 200 - 64 - 64
+        let factor: CGFloat = 1 / (base + 64)
+        if scrollView.contentOffset.y <= base {
+            navBarBgColorAlpha = (scrollView.contentOffset.y + 64) * factor
+            self.navigationController?.navigationBar.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: navBarBgColorAlpha)
+            APPDELEGATE.statusView.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: navBarBgColorAlpha)
+            
+            var rect = centerView.frame
+            rect.origin.y = -(scrollView.contentOffset.y + 64) + 160
+            rect.size.width = -(scrollView.contentOffset.y + 64) + 300
+            
+            if rect.origin.y <= 20 + ((44 - 30) / 2) {
+                rect.origin.y = 20 + ((44 - 30) / 2)
+            }
+            
+            if rect.size.width <= 200 {
+                rect.size.width = 200
+            }
+            
+            rect.origin.x = (SCREENWITH - rect.width) / 2
+            
+            centerView.frame = rect
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        let base: CGFloat = 200 - 64 - 64
+        if scrollView.contentOffset.y > base {
+            navBarBgColorAlpha = 1.0
+            self.navigationController?.navigationBar.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: navBarBgColorAlpha)
+            APPDELEGATE.statusView.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: navBarBgColorAlpha)
+            
+            centerView.frame.origin.y = 20 + ((44 - 30) / 2)
+            centerView.frame.size.width = 200
+            centerView.frame.origin.x = (SCREENWITH - 200) / 2
+        }
     }
 
     func rightBarButtonItemClicked(sender: UIBarButtonItem) {
@@ -93,29 +150,13 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate {
         ]
         
         //Is there is another better way to get the accurate rect?
-        let rect = CGRectMake(SCREENWITH - 49, 20 + 22, 44, 10)
+        let rect = CGRectMake(SCREENWITH - 52, 20 + 22, 44, 10)
         KxMenu.setTintColor(UIColor.whiteColor())
-        KxMenu.showMenuInView(self.navigationController?.navigationBar.superview, fromRect: rect, menuItems: itemArr)
+        KxMenu.showMenuInView(APPDELEGATE.window, fromRect: rect, menuItems: itemArr)
     }
     
     func chooseItem(sender:AnyObject) {
-        self.view.backgroundColor = UIColor.greenColor()
-        UIView.animateWithDuration(0.5, animations: {
-            self.navigationController?.navigationBar.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0)
-            }, completion: {
-                (Bool) in
-                UIView.animateWithDuration(1.5, animations: {
-                    self.navigationController?.navigationBar.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.4)
-                    }, completion: {
-                        (Bool) in
-                        UIView.animateWithDuration(2.0, animations: {
-                            self.navigationController?.navigationBar.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.1)
-                            }, completion: {
-                                (Bool) in
-                                
-                        })
-                })
-        })
+        
     }
     
     override func didReceiveMemoryWarning() {

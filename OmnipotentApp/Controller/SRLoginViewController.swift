@@ -8,10 +8,12 @@
 
 import UIKit
 
-class SRLoginViewController: UIViewController, SRAnimatedImagesViewDelegate {
+class SRLoginViewController: UIViewController, SRAnimatedImagesViewDelegate, UITextFieldDelegate {
     //MARK: - properties
     @IBOutlet weak var bkgView: SRAnimatedImagesView!
     @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var userNameTextField: SRUnderlineTextField!
+    @IBOutlet weak var passwordTextField: SRUnderlineTextField!
     
     //MARK: - system methods
     deinit {
@@ -40,27 +42,34 @@ class SRLoginViewController: UIViewController, SRAnimatedImagesViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.loginBtn.setBackgroundImage(SRUtil.createImageWithColor(UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: 0.6)), forState: .Normal)
-        self.loginBtn.setBackgroundImage(SRUtil.createImageWithColor(UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: 0.8)), forState: .Highlighted)
+        self.loginBtn.setBackgroundImage(SRUtil.createImageWithColor(COLOR_LOGINBTN_NORMAL), forState: .Normal)
+        self.loginBtn.setBackgroundImage(SRUtil.createImageWithColor(COLOR_LOGINBTN_HIGHTED), forState: .Highlighted)
         
         //Register notifications about keyboard
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: self.view.window)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: self.view.window)
         
-        bkgView.delegate = self
+        self.bkgView.delegate = self
+        self.userNameTextField.delegate = self
+        self.passwordTextField.delegate = self
+    }
+    
+    //MARK: - UITextFieldDelegate
+    func textFieldDidBeginEditing(textField: UITextField) {
+        (textField as! SRUnderlineTextField).highlited = true
+        textField.setNeedsDisplay()
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        (textField as! SRUnderlineTextField).highlited = false
+        textField.setNeedsDisplay()
     }
 
     //MARK: - login related methods
     @IBAction func login(sender: UIButton) {
         self.view.endEditing(true)
         
-        let story = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let leftSlideViewCtrl: UINavigationController = story.instantiateViewControllerWithIdentifier("settingNavCtrl") as! UINavigationController
-        APPDELEGATE.mainViewNavCtrl = story.instantiateViewControllerWithIdentifier("tabBarCtrlNavCtrl") as? UINavigationController
-        APPDELEGATE.rootViewCtrl = LeftSlideViewController(leftView: leftSlideViewCtrl, andMainView: APPDELEGATE.mainViewNavCtrl)
-        APPDELEGATE.window?.rootViewController = APPDELEGATE.rootViewCtrl
-        
-        self.performSegueWithIdentifier("loginSuccess", sender: nil)
+        APPDELEGATE.enterApp()
     }
 
     @IBAction func findPwd(sender: UIButton) {
@@ -83,7 +92,6 @@ class SRLoginViewController: UIViewController, SRAnimatedImagesViewDelegate {
     @IBAction func touchBkgView(sender: UIControl) {
         self.view.endEditing(true)
     }
-    
     
     func keyboardWillHide(notif: NSNotification) {
         if IPHONE4S == false {

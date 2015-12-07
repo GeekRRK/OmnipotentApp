@@ -13,8 +13,25 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var rootViewCtrl: LeftSlideViewController?
-    var mainViewNavCtrl: UINavigationController?
+    let statusView = UIView(frame: CGRectMake(0, 0, SCREENWITH, 20))
+
+    var drawerVC: LDrawerViewController?
+    
+//    func blackenStatusBar() {
+//        statusView.backgroundColor = UIColor.blackColor()
+//        window?.addSubview(statusView)
+//    }
+    
+    func enterApp() {
+        let story = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let settingNavCtrl = story.instantiateViewControllerWithIdentifier("settingCtrl") as! SRSettingViewController
+        let mainViewNavCtrl = story.instantiateViewControllerWithIdentifier("tabBarCtrlNavCtrl") as? UINavigationController
+        drawerVC = LDrawerViewController(centerController: mainViewNavCtrl, leftController: settingNavCtrl)
+        let drawerNavCtrl = UINavigationController(rootViewController: drawerVC!)
+        drawerNavCtrl.navigationBarHidden = true
+        window?.rootViewController = drawerNavCtrl
+        
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

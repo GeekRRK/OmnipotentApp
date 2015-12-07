@@ -9,7 +9,7 @@
 import UIKit
 
 class SRSettingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var avatarBtn: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -17,9 +17,11 @@ class SRSettingViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var optionTableView: UITableView!
     
     var optionArr: [[String]]?
+    let statusView = UIView(frame: CGRectMake(0, 0, SCREENWITH, 20))
     
-    override func viewWillDisappear(animated: Bool) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+    override func viewWillAppear(animated: Bool) {
+        APPDELEGATE.drawerVC?.navigationController?.navigationBarHidden = true
+        self.view.addSubview(statusView)
     }
     
     override func viewDidLoad() {
@@ -57,6 +59,7 @@ class SRSettingViewController: UIViewController, UITableViewDataSource, UITableV
             cell = UITableViewCell(style: .Value1, reuseIdentifier: "reuseIdentifier")
         }
         // Configure the cell...
+        cell?.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: 1.0)
         cell?.imageView?.image = UIImage(named: self.optionArr![indexPath.row][1])
         cell?.textLabel?.text = self.optionArr![indexPath.row][0]
         
@@ -66,8 +69,10 @@ class SRSettingViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let story = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let login: UIViewController = story.instantiateViewControllerWithIdentifier("loginCtrl")
-        APPDELEGATE.rootViewCtrl?.closeLeftView()
-        APPDELEGATE.mainViewNavCtrl?.pushViewController(login, animated: true)
+        
+        APPDELEGATE.drawerVC?.navigationController?.navigationBarHidden = false
+        APPDELEGATE.drawerVC?.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        APPDELEGATE.drawerVC?.navigationController!.pushViewController(login, animated: true)
     }
 
     /*
