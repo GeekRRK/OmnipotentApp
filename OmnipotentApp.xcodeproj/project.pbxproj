@@ -613,7 +613,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/OmnipotentApp/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.suorui.OmnipotentApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GeekRRK.OmnipotentApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OmnipotentApp/Supporting Files/OmnipotentApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -630,7 +630,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/OmnipotentApp/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.suorui.OmnipotentApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GeekRRK.OmnipotentApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OmnipotentApp/Supporting Files/OmnipotentApp-Bridging-Header.h";
 			};
@@ -642,7 +642,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = OmnipotentAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.suorui.OmnipotentAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GeekRRK.OmnipotentAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OmnipotentApp.app/OmnipotentApp";
 			};
@@ -654,7 +654,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = OmnipotentAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.suorui.OmnipotentAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GeekRRK.OmnipotentAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OmnipotentApp.app/OmnipotentApp";
 			};
@@ -665,7 +665,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = OmnipotentAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.suorui.OmnipotentAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GeekRRK.OmnipotentAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = OmnipotentApp;
 				USES_XCTRUNNER = YES;
@@ -677,7 +677,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = OmnipotentAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.suorui.OmnipotentAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GeekRRK.OmnipotentAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = OmnipotentApp;
 				USES_XCTRUNNER = YES;
