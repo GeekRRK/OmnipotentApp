@@ -2,8 +2,8 @@
 //  SRCommon.swift
 //  OmnipotentApp
 //
-//  Created by suorui on 15/12/4.
-//  Copyright © 2015年 suorui. All rights reserved.
+//  Created by GeekRRK on 15/12/4.
+//  Copyright © 2015年 GeekRRK. All rights reserved.
 //
 
 import UIKit
