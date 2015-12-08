@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		28772F327B61E53E85EDE3F1 /* libPods-OmnipotentApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9702F6B18ABCCB3BC3B2D2 /* libPods-OmnipotentApp.a */; };
-		7102B2391C0BE93500497F95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7102B2371C0BE93500497F95 /* Main.storyboard */; };
-		7102B23C1C0BE93500497F95 /* OmnipotentApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7102B23A1C0BE93500497F95 /* OmnipotentApp.xcdatamodeld */; };
-		7102B23E1C0BE93500497F95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7102B23D1C0BE93500497F95 /* Assets.xcassets */; };
-		7102B2411C0BE93500497F95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7102B23F1C0BE93500497F95 /* LaunchScreen.storyboard */; };
 		7102B24C1C0BE93500497F95 /* OmnipotentAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102B24B1C0BE93500497F95 /* OmnipotentAppTests.swift */; };
 		7102B2571C0BE93500497F95 /* OmnipotentAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102B2561C0BE93500497F95 /* OmnipotentAppUITests.swift */; };
 		71056B841C0D79B00062B294 /* SRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71056B821C0D79B00062B294 /* SRLoginViewController.swift */; };
@@ -28,6 +24,11 @@
 		719B9B8E1C156C4F004F1A5F /* ZWAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 719B9B8D1C156C4F004F1A5F /* ZWAdView.m */; };
 		719B9B961C157E45004F1A5F /* LCnterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 719B9B911C157E45004F1A5F /* LCnterView.m */; };
 		719B9B971C157E45004F1A5F /* LDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719B9B931C157E45004F1A5F /* LDrawerViewController.m */; };
+		71CA99181C1684AD0013FCBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71CA990F1C1684AD0013FCBD /* Assets.xcassets */; };
+		71CA99191C1684AD0013FCBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71CA99101C1684AD0013FCBD /* LaunchScreen.storyboard */; };
+		71CA991A1C1684AD0013FCBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71CA99121C1684AD0013FCBD /* Main.storyboard */; };
+		71CA991B1C1684AD0013FCBD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71CA99141C1684AD0013FCBD /* Info.plist */; };
+		71CA991C1C1684AD0013FCBD /* OmnipotentApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71CA99161C1684AD0013FCBD /* OmnipotentApp.xcdatamodeld */; };
 		71FA85831C0E96B100F6F4B1 /* SRMsgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA85821C0E96B100F6F4B1 /* SRMsgViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,11 +52,6 @@
 /* Begin PBXFileReference section */
 		398944F4D3B27DDD2322C5A2 /* Pods-OmnipotentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnipotentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-OmnipotentApp/Pods-OmnipotentApp.release.xcconfig"; sourceTree = "<group>"; };
 		7102B2301C0BE93500497F95 /* OmnipotentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmnipotentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7102B2381C0BE93500497F95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7102B23B1C0BE93500497F95 /* OmnipotentApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OmnipotentApp.xcdatamodel; sourceTree = "<group>"; };
-		7102B23D1C0BE93500497F95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7102B2401C0BE93500497F95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7102B2421C0BE93500497F95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7102B2471C0BE93500497F95 /* OmnipotentAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmnipotentAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7102B24B1C0BE93500497F95 /* OmnipotentAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmnipotentAppTests.swift; sourceTree = "<group>"; };
 		7102B24D1C0BE93500497F95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,13 +70,18 @@
 		7142BA711C0C3E2E0021D588 /* SRAnimatedImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAnimatedImagesView.swift; sourceTree = "<group>"; };
 		719B9B831C152836004F1A5F /* SRLaunchAdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRLaunchAdViewController.swift; sourceTree = "<group>"; };
 		719B9B851C153616004F1A5F /* SRCountdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRCountdownViewController.swift; sourceTree = "<group>"; };
-		719B9B8A1C156BB8004F1A5F /* OmnipotentApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OmnipotentApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		719B9B8C1C156C4F004F1A5F /* ZWAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWAdView.h; sourceTree = "<group>"; };
 		719B9B8D1C156C4F004F1A5F /* ZWAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWAdView.m; sourceTree = "<group>"; };
 		719B9B901C157E45004F1A5F /* LCnterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCnterView.h; sourceTree = "<group>"; };
 		719B9B911C157E45004F1A5F /* LCnterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCnterView.m; sourceTree = "<group>"; };
 		719B9B921C157E45004F1A5F /* LDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDrawerViewController.h; sourceTree = "<group>"; };
 		719B9B931C157E45004F1A5F /* LDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDrawerViewController.m; sourceTree = "<group>"; };
+		71CA990F1C1684AD0013FCBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		71CA99111C1684AD0013FCBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		71CA99131C1684AD0013FCBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		71CA99141C1684AD0013FCBD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71CA99151C1684AD0013FCBD /* OmnipotentApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OmnipotentApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		71CA99171C1684AD0013FCBD /* OmnipotentApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OmnipotentApp.xcdatamodel; sourceTree = "<group>"; };
 		71FA85821C0E96B100F6F4B1 /* SRMsgViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRMsgViewController.swift; sourceTree = "<group>"; };
 		D9058946100FDE5D2D51E4EA /* Pods-OmnipotentApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnipotentApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OmnipotentApp/Pods-OmnipotentApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DA9702F6B18ABCCB3BC3B2D2 /* libPods-OmnipotentApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OmnipotentApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,16 +146,11 @@
 		7102B2321C0BE93500497F95 /* OmnipotentApp */ = {
 			isa = PBXGroup;
 			children = (
-				71056B8B1C0D90250062B294 /* ThirdParty */,
-				711060C51C0C12DB00B25979 /* Controller */,
 				711060C61C0C12DB00B25979 /* Model */,
 				711060C71C0C12DB00B25979 /* View */,
-				7102B2371C0BE93500497F95 /* Main.storyboard */,
-				7102B23D1C0BE93500497F95 /* Assets.xcassets */,
-				7102B23F1C0BE93500497F95 /* LaunchScreen.storyboard */,
-				7102B2421C0BE93500497F95 /* Info.plist */,
-				7102B23A1C0BE93500497F95 /* OmnipotentApp.xcdatamodeld */,
-				719B9B8A1C156BB8004F1A5F /* OmnipotentApp-Bridging-Header.h */,
+				711060C51C0C12DB00B25979 /* Controller */,
+				71056B8B1C0D90250062B294 /* ThirdParty */,
+				71CA990E1C1684AD0013FCBD /* Supporting Files */,
 			);
 			path = OmnipotentApp;
 			sourceTree = "<group>";
@@ -246,6 +242,19 @@
 				719B9B931C157E45004F1A5F /* LDrawerViewController.m */,
 			);
 			path = LDrawerViewController;
+			sourceTree = "<group>";
+		};
+		71CA990E1C1684AD0013FCBD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				71CA990F1C1684AD0013FCBD /* Assets.xcassets */,
+				71CA99101C1684AD0013FCBD /* LaunchScreen.storyboard */,
+				71CA99121C1684AD0013FCBD /* Main.storyboard */,
+				71CA99141C1684AD0013FCBD /* Info.plist */,
+				71CA99151C1684AD0013FCBD /* OmnipotentApp-Bridging-Header.h */,
+				71CA99161C1684AD0013FCBD /* OmnipotentApp.xcdatamodeld */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		ACEC72BC208F560A93C3DAC9 /* Pods */ = {
@@ -365,9 +374,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7102B2411C0BE93500497F95 /* LaunchScreen.storyboard in Resources */,
-				7102B23E1C0BE93500497F95 /* Assets.xcassets in Resources */,
-				7102B2391C0BE93500497F95 /* Main.storyboard in Resources */,
+				71CA991B1C1684AD0013FCBD /* Info.plist in Resources */,
+				71CA991A1C1684AD0013FCBD /* Main.storyboard in Resources */,
+				71CA99181C1684AD0013FCBD /* Assets.xcassets in Resources */,
+				71CA99191C1684AD0013FCBD /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71CA991C1C1684AD0013FCBD /* OmnipotentApp.xcdatamodeld in Sources */,
 				71056B841C0D79B00062B294 /* SRLoginViewController.swift in Sources */,
 				719B9B861C153616004F1A5F /* SRCountdownViewController.swift in Sources */,
 				719B9B971C157E45004F1A5F /* LDrawerViewController.m in Sources */,
@@ -452,7 +463,6 @@
 				71056B9A1C0DA42D0062B294 /* SRHomePageViewController.swift in Sources */,
 				719B9B841C152836004F1A5F /* SRLaunchAdViewController.swift in Sources */,
 				71FA85831C0E96B100F6F4B1 /* SRMsgViewController.swift in Sources */,
-				7102B23C1C0BE93500497F95 /* OmnipotentApp.xcdatamodeld in Sources */,
 				71056B8A1C0D81DE0062B294 /* SRTabBarController.swift in Sources */,
 				710E013B1C1019C90035E244 /* SRSettingViewController.swift in Sources */,
 				7142BA721C0C3E2E0021D588 /* SRAnimatedImagesView.swift in Sources */,
@@ -491,20 +501,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7102B2371C0BE93500497F95 /* Main.storyboard */ = {
+		71CA99101C1684AD0013FCBD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7102B2381C0BE93500497F95 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7102B23F1C0BE93500497F95 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7102B2401C0BE93500497F95 /* Base */,
+				71CA99111C1684AD0013FCBD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		71CA99121C1684AD0013FCBD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71CA99131C1684AD0013FCBD /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -600,12 +610,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = OmnipotentApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OmnipotentApp/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suorui.OmnipotentApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OmnipotentApp/OmnipotentApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "OmnipotentApp/Supporting Files/OmnipotentApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -617,12 +627,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = OmnipotentApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OmnipotentApp/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suorui.OmnipotentApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OmnipotentApp/OmnipotentApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "OmnipotentApp/Supporting Files/OmnipotentApp-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -716,12 +726,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		7102B23A1C0BE93500497F95 /* OmnipotentApp.xcdatamodeld */ = {
+		71CA99161C1684AD0013FCBD /* OmnipotentApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				7102B23B1C0BE93500497F95 /* OmnipotentApp.xcdatamodel */,
+				71CA99171C1684AD0013FCBD /* OmnipotentApp.xcdatamodel */,
 			);
-			currentVersion = 7102B23B1C0BE93500497F95 /* OmnipotentApp.xcdatamodel */;
+			currentVersion = 71CA99171C1684AD0013FCBD /* OmnipotentApp.xcdatamodel */;
 			path = OmnipotentApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

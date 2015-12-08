@@ -29,6 +29,8 @@ class SRSettingViewController: UIViewController, UITableViewDataSource, UITableV
 
         // Do any additional setup after loading the view.
         
+        optionTableView.backgroundColor = UIColor.clearColor()
+        
         optionArr = [
             ["选项一", "tab_netwo"],
             ["选项二", "tab_message"],
@@ -59,7 +61,8 @@ class SRSettingViewController: UIViewController, UITableViewDataSource, UITableV
             cell = UITableViewCell(style: .Value1, reuseIdentifier: "reuseIdentifier")
         }
         // Configure the cell...
-        cell?.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: 1.0)
+        cell?.backgroundColor = UIColor.clearColor()
+        cell?.selectionStyle = .None
         cell?.imageView?.image = UIImage(named: self.optionArr![indexPath.row][1])
         cell?.textLabel?.text = self.optionArr![indexPath.row][0]
         

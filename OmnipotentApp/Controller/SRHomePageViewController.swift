@@ -14,13 +14,11 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate, ZWAdView
     
     let centerView: UITextField = UITextField(frame: CGRectMake(10, 150, SCREENWITH - 20, 30))
     let adScrollView = ZWAdView(frame: CGRectMake(0, -64, SCREENWITH, 200))
-    
+    let statusView = UIView(frame: CGRectMake(0, 0, SCREENWITH, 20))
     var navBarBgColorAlpha: CGFloat = 0.0
     
     func customizeNavigationItem() {
         SRUtil.customizeNavBar(self.navigationController?.navigationBar)
-        
-        APPDELEGATE.window?.addSubview(APPDELEGATE.statusView)
         
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: navBarBgColorAlpha)
         
@@ -47,8 +45,6 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate, ZWAdView
     func decustomizeNavigationItem() {
         SRUtil.deCustomizeNavBar(self.navigationController?.navigationBar)
         
-        APPDELEGATE.statusView.removeFromSuperview()
-        
         self.tabBarController?.navigationItem.rightBarButtonItem = nil
         self.tabBarController?.navigationItem.titleView = nil
         self.navigationController?.navigationBar.backgroundColor = UIColor.clearColor()
@@ -58,6 +54,8 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate, ZWAdView
     
     override func viewWillAppear(animated: Bool) {
         self.customizeNavigationItem()
+        
+        APPDELEGATE.drawerVC?.enablePanGesture()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -67,6 +65,7 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate, ZWAdView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.view.addSubview(statusView)
         
         self.scrollView.delegate = self
         
@@ -109,7 +108,7 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate, ZWAdView
         if scrollView.contentOffset.y <= base {
             navBarBgColorAlpha = (scrollView.contentOffset.y + 64) * factor
             self.navigationController?.navigationBar.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: navBarBgColorAlpha)
-            APPDELEGATE.statusView.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: navBarBgColorAlpha)
+            statusView.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: navBarBgColorAlpha)
             
             var rect = centerView.frame
             rect.origin.y = -(scrollView.contentOffset.y + 64) + 160
@@ -134,8 +133,8 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate, ZWAdView
         if scrollView.contentOffset.y > base {
             navBarBgColorAlpha = 1.0
             self.navigationController?.navigationBar.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: navBarBgColorAlpha)
-            APPDELEGATE.statusView.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: navBarBgColorAlpha)
-            
+            statusView.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: navBarBgColorAlpha)
+
             centerView.frame.origin.y = 20 + ((44 - 30) / 2)
             centerView.frame.size.width = 200
             centerView.frame.origin.x = (SCREENWITH - 200) / 2
@@ -150,13 +149,16 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate, ZWAdView
         ]
         
         //Is there is another better way to get the accurate rect?
-        let rect = CGRectMake(SCREENWITH - 52, 20 + 22, 44, 10)
+        let rect = CGRectMake(SCREENWITH - 52, 20 + 22 + 2, 44, 10)
         KxMenu.setTintColor(UIColor.whiteColor())
         KxMenu.showMenuInView(APPDELEGATE.window, fromRect: rect, menuItems: itemArr)
     }
     
     func chooseItem(sender:AnyObject) {
+        APPDELEGATE.drawerVC?.disablePanGesture()
         
+        let settingNavCtrl = STORY.instantiateViewControllerWithIdentifier("settingCtrl") as! SRSettingViewController
+        self.navigationController?.pushViewController(settingNavCtrl, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

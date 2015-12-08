@@ -13,19 +13,12 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let statusView = UIView(frame: CGRectMake(0, 0, SCREENWITH, 20))
 
     var drawerVC: LDrawerViewController?
     
-//    func blackenStatusBar() {
-//        statusView.backgroundColor = UIColor.blackColor()
-//        window?.addSubview(statusView)
-//    }
-    
     func enterApp() {
-        let story = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let settingNavCtrl = story.instantiateViewControllerWithIdentifier("settingCtrl") as! SRSettingViewController
-        let mainViewNavCtrl = story.instantiateViewControllerWithIdentifier("tabBarCtrlNavCtrl") as? UINavigationController
+        let settingNavCtrl = STORY.instantiateViewControllerWithIdentifier("settingCtrl") as! SRSettingViewController
+        let mainViewNavCtrl = STORY.instantiateViewControllerWithIdentifier("tabBarCtrlNavCtrl") as? UINavigationController
         drawerVC = LDrawerViewController(centerController: mainViewNavCtrl, leftController: settingNavCtrl)
         let drawerNavCtrl = UINavigationController(rootViewController: drawerVC!)
         drawerNavCtrl.navigationBarHidden = true

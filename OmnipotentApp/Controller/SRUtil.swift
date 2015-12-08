@@ -18,6 +18,7 @@ let COLOR_LOGINBTN_NORMAL = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: 0.6)
 let COLOR_LOGINBTN_HIGHTED = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: 0.8)
 
 let APPDELEGATE = UIApplication.sharedApplication().delegate as! AppDelegate
+let STORY = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
 
 class SRUtil: NSObject {
     

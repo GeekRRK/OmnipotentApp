@@ -21,6 +21,12 @@
 -(void)open;
 
 -(void)close;
+
+@property (strong, nonatomic) UIPanGestureRecognizer *gesture;
+@property (assign, nonatomic) BOOL enabled;
+- (void)enablePanGesture;
+- (void)disablePanGesture;
+
 @end
 
 

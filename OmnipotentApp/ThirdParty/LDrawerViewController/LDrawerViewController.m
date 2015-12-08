@@ -51,6 +51,20 @@ typedef NS_ENUM(NSInteger,LDrawerState){
     return self;
 }
 
+- (void)enablePanGesture {
+    if(_enabled != YES) {
+        [_centerView addGestureRecognizer:self.gesture];
+        _enabled = YES;
+    }
+}
+
+- (void)disablePanGesture {
+    if(_enabled == YES) {
+        [_centerView removeGestureRecognizer:self.gesture];
+        _enabled = NO;
+    }
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
@@ -69,8 +83,10 @@ typedef NS_ENUM(NSInteger,LDrawerState){
     _centerController.view.frame = self.view.bounds;
     [_centerView addSubview:_centerController.view];
     
-    UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(tapMoive:)];
-    [_centerView addGestureRecognizer:gesture];
+    self.gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(tapMoive:)];
+    [_centerView addGestureRecognizer:self.gesture];
+    
+    _enabled = YES;
 
 }
 
