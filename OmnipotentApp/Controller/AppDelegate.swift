@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  OmnipotentApp
 //
-//  Created by suorui on 15/11/30.
-//  Copyright © 2015年 suorui. All rights reserved.
+//  Created by GeekRRK on 15/11/30.
+//  Copyright © 2015年 GeekRRK. All rights reserved.
 //
 
 import UIKit
@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data stack
 
     lazy var applicationDocumentsDirectory: NSURL = {
-        // The directory the application uses to store the Core Data store file. This code uses a directory named "com.suorui.OmnipotentApp" in the application's documents Application Support directory.
+        // The directory the application uses to store the Core Data store file. This code uses a directory named "com.GeekRRK.OmnipotentApp" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         return urls[urls.count-1]
     }()

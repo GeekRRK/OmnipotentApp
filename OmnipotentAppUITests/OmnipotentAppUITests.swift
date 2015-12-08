@@ -2,8 +2,8 @@
 //  OmnipotentAppUITests.swift
 //  OmnipotentAppUITests
 //
-//  Created by suorui on 15/11/30.
-//  Copyright © 2015年 suorui. All rights reserved.
+//  Created by GeekRRK on 15/11/30.
+//  Copyright © 2015年 GeekRRK. All rights reserved.
 //
 
 import XCTest
