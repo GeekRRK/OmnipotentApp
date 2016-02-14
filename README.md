@@ -5,13 +5,12 @@ I don't need to start from scratch. The omnipotent App will be updated aperiodic
 
 Updates:
 * Skeleton which contains tab bar controller and navigation controller.
-![Skeleton](https://raw.githubusercontent.com/GeekRRK/OmnipotentApp/master/image/skeleton.png)
-* Login UI which is concise but not boring.
+* Login UI which is concise but not boring.  
 ![Login](https://raw.githubusercontent.com/GeekRRK/OmnipotentApp/master/image/login.gif)
-* Scrolling Ad on the top of homepage with transparent navigation bar.
+* Scrolling Ad on the top of homepage with transparent navigation bar.  
 ![Scolling Ad](https://raw.githubusercontent.com/GeekRRK/OmnipotentApp/master/image/homepage.gif)
-* Sliding drawer.
+* Sliding drawer.  
 ![Drawer](https://raw.githubusercontent.com/GeekRRK/OmnipotentApp/master/image/drawer.gif)
-* Launch counting or sliding Ad.
+* Launch counting or sliding Ad.  
 ![Skeleton](https://raw.githubusercontent.com/GeekRRK/OmnipotentApp/master/image/count.gif)
 ![Skeleton](https://raw.githubusercontent.com/GeekRRK/OmnipotentApp/master/image/slide.gif)
