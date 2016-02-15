@@ -11,6 +11,4 @@ Updates:
 ![Scolling Ad](https://raw.githubusercontent.com/GeekRRK/OmnipotentApp/master/image/homepage.gif)
 * Sliding drawer.  
 ![Drawer](https://raw.githubusercontent.com/GeekRRK/OmnipotentApp/master/image/drawer.gif)
-* Launch counting or sliding Ad.  
-![Skeleton](https://raw.githubusercontent.com/GeekRRK/OmnipotentApp/master/image/count.gif)
-![Skeleton](https://raw.githubusercontent.com/GeekRRK/OmnipotentApp/master/image/slide.gif)
+* Launch counting or sliding Ad.
