@@ -12,3 +12,4 @@ Updates:
 * Sliding drawer.  
 ![Drawer](https://raw.githubusercontent.com/GeekRRK/OmnipotentApp/master/image/drawer.gif)
 * Launch counting or sliding Ad.
+* Light activity indicator.
