@@ -19,6 +19,7 @@
 		711060C91C0C133500B25979 /* SRUnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711060C81C0C133500B25979 /* SRUnderlineTextField.swift */; };
 		711797561C117D3D0048D860 /* SRUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711797551C117D3D0048D860 /* SRUtil.swift */; };
 		7142BA721C0C3E2E0021D588 /* SRAnimatedImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7142BA711C0C3E2E0021D588 /* SRAnimatedImagesView.swift */; };
+		7186A6701C76F109009B5E7A /* AlIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7186A66F1C76F109009B5E7A /* AlIndicator.swift */; };
 		719B9B841C152836004F1A5F /* SRLaunchAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B9B831C152836004F1A5F /* SRLaunchAdViewController.swift */; };
 		719B9B861C153616004F1A5F /* SRCountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B9B851C153616004F1A5F /* SRCountdownViewController.swift */; };
 		719B9B8E1C156C4F004F1A5F /* ZWAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 719B9B8D1C156C4F004F1A5F /* ZWAdView.m */; };
@@ -68,6 +69,7 @@
 		711060C81C0C133500B25979 /* SRUnderlineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUnderlineTextField.swift; sourceTree = "<group>"; };
 		711797551C117D3D0048D860 /* SRUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUtil.swift; sourceTree = "<group>"; };
 		7142BA711C0C3E2E0021D588 /* SRAnimatedImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAnimatedImagesView.swift; sourceTree = "<group>"; };
+		7186A66F1C76F109009B5E7A /* AlIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlIndicator.swift; sourceTree = "<group>"; };
 		719B9B831C152836004F1A5F /* SRLaunchAdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRLaunchAdViewController.swift; sourceTree = "<group>"; };
 		719B9B851C153616004F1A5F /* SRCountdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRCountdownViewController.swift; sourceTree = "<group>"; };
 		719B9B8C1C156C4F004F1A5F /* ZWAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWAdView.h; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				711060C81C0C133500B25979 /* SRUnderlineTextField.swift */,
 				7142BA711C0C3E2E0021D588 /* SRAnimatedImagesView.swift */,
+				7186A66F1C76F109009B5E7A /* AlIndicator.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				71056B841C0D79B00062B294 /* SRLoginViewController.swift in Sources */,
 				719B9B861C153616004F1A5F /* SRCountdownViewController.swift in Sources */,
 				719B9B971C157E45004F1A5F /* LDrawerViewController.m in Sources */,
+				7186A6701C76F109009B5E7A /* AlIndicator.swift in Sources */,
 				711060C91C0C133500B25979 /* SRUnderlineTextField.swift in Sources */,
 				71056B851C0D79B00062B294 /* AppDelegate.swift in Sources */,
 				711797561C117D3D0048D860 /* SRUtil.swift in Sources */,

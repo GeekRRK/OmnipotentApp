@@ -69,7 +69,11 @@ class SRLoginViewController: UIViewController, SRAnimatedImagesViewDelegate, UIT
     @IBAction func login(sender: UIButton) {
         self.view.endEditing(true)
         
-        APPDELEGATE.enterApp()
+        AlIndicator.sharedInstance.showIndicator({
+                sleep(3)
+            }, completion: {
+                APPDELEGATE.enterApp()
+        })
     }
 
     @IBAction func findPwd(sender: UIButton) {
