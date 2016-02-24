@@ -2,8 +2,8 @@
 //  AlIndicator.swift
 //  OmnipotentApp
 //
-//  Created by suorui on 2/19/16.
-//  Copyright © 2016 suorui. All rights reserved.
+//  Created by GeekRRK on 2/19/16.
+//  Copyright © 2016 GeekRRK. All rights reserved.
 //
 
 import UIKit
