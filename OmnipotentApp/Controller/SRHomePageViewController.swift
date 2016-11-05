@@ -12,9 +12,9 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate, ZWAdView
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    let centerView: UITextField = UITextField(frame: CGRectMake(10, 150, SCREENWITH - 20, 30))
-    let adScrollView = ZWAdView(frame: CGRectMake(0, -64, SCREENWITH, 200))
-    let statusView = UIView(frame: CGRectMake(0, 0, SCREENWITH, 20))
+    let centerView: UITextField = UITextField(frame: CGRect(x: 10, y: 150, width: SCREENWITH - 20, height: 30))
+    let adScrollView = ZWAdView(frame: CGRect(x: 0, y: -64, width: SCREENWITH, height: 200))
+    let statusView = UIView(frame: CGRect(x: 0, y: 0, width: SCREENWITH, height: 20))
     var navBarBgColorAlpha: CGFloat = 0.0
     
     func customizeNavigationItem() {
@@ -23,21 +23,21 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate, ZWAdView
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1.0, alpha: navBarBgColorAlpha)
         
         //Build leftItem of navigationitem
-        let rightItem = UIButton(frame: CGRectMake(0, 0, 30, 30))
+        let rightItem = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         rightItem.layer.masksToBounds = true
         rightItem.layer.cornerRadius = rightItem.frame.width * 0.5
-        rightItem.setBackgroundImage(UIImage(named: "avatar"), forState: .Normal)
-        rightItem.addTarget(self, action: "rightBarButtonItemClicked:", forControlEvents: .TouchUpInside)
+        rightItem.setBackgroundImage(UIImage(named: "avatar"), for: UIControlState())
+        rightItem.addTarget(self, action: #selector(SRHomePageViewController.rightBarButtonItemClicked(_:)), for: .touchUpInside)
         self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightItem)
         
         //Build titleView of navigationitem.
-        centerView.backgroundColor = UIColor.whiteColor()
-        centerView.tintColor = UIColor.lightGrayColor()
+        centerView.backgroundColor = UIColor.white
+        centerView.tintColor = UIColor.lightGray
         
-        let leftView = UIView(frame: CGRectMake(0, 0, 5, 30))
-        centerView.leftViewMode = .Always
+        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 30))
+        centerView.leftViewMode = .always
         centerView.leftView = leftView
-        centerView.clearButtonMode = .WhileEditing
+        centerView.clearButtonMode = .whileEditing
         centerView.placeholder = "测试数据"
         self.navigationController?.view.addSubview(centerView)
     }
@@ -47,18 +47,18 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate, ZWAdView
         
         self.tabBarController?.navigationItem.rightBarButtonItem = nil
         self.tabBarController?.navigationItem.titleView = nil
-        self.navigationController?.navigationBar.backgroundColor = UIColor.clearColor()
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         
         centerView.removeFromSuperview()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.customizeNavigationItem()
         
         APPDELEGATE.drawerVC?.enablePanGesture()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         self.decustomizeNavigationItem()
     }
     
@@ -85,7 +85,7 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate, ZWAdView
         adScrollView.loadAdDataThenStart()
         self.scrollView.addSubview(adScrollView)
         
-        var rect = CGRectMake(10, -64 + adScrollView.frame.height + 20, self.view.frame.width - 20, 100)
+        var rect = CGRect(x: 10, y: -64 + adScrollView.frame.height + 20, width: self.view.frame.width - 20, height: 100)
         for _ in 0..<4 {
             let view = UIView(frame: rect)
             view.backgroundColor = COLOR_LOGINBTN_NORMAL
@@ -93,16 +93,16 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate, ZWAdView
             rect.origin.y = rect.origin.y + rect.height + 10
         }
         
-        self.scrollView.contentSize = CGSizeMake(self.view.frame.width, rect.origin.y)
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: rect.origin.y)
     }
     
     //MARK: - ZWAdViewDelagate
-    func adView(adView: ZWAdView!, didDeselectAdAtNum num: Int) {
+    func adView(_ adView: ZWAdView!, didDeselectAdAtNum num: Int) {
         print("\(num)")
     }
     
     //MARK: - UISrollViewDelegate
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let base: CGFloat = 200 - 64 - 64
         let factor: CGFloat = 1 / (base + 64)
         if scrollView.contentOffset.y <= base {
@@ -128,7 +128,7 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate, ZWAdView
         }
     }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let base: CGFloat = 200 - 64 - 64
         if scrollView.contentOffset.y > base {
             navBarBgColorAlpha = 1.0
@@ -141,23 +141,23 @@ class SRHomePageViewController: UIViewController, UIScrollViewDelegate, ZWAdView
         }
     }
 
-    func rightBarButtonItemClicked(sender: UIBarButtonItem) {
+    func rightBarButtonItemClicked(_ sender: UIBarButtonItem) {
         let itemArr = [
-            KxMenuItem.init("选项一", image: nil, target: self, action: "chooseItem:"),
-            KxMenuItem.init("选项二", image: nil, target: self, action: "chooseItem:"),
-            KxMenuItem.init("选项三", image: nil, target: self, action: "chooseItem:"),
+            KxMenuItem.init("选项一", image: nil, target: self, action: #selector(SRHomePageViewController.chooseItem(_:))),
+            KxMenuItem.init("选项二", image: nil, target: self, action: #selector(SRHomePageViewController.chooseItem(_:))),
+            KxMenuItem.init("选项三", image: nil, target: self, action: #selector(SRHomePageViewController.chooseItem(_:))),
         ]
         
         //Is there is another better way to get the accurate rect?
-        let rect = CGRectMake(SCREENWITH - 52, 20 + 22 + 2, 44, 10)
-        KxMenu.setTintColor(UIColor.whiteColor())
-        KxMenu.showMenuInView(APPDELEGATE.window, fromRect: rect, menuItems: itemArr)
+        let rect = CGRect(x: SCREENWITH - 52, y: 20 + 22 + 2, width: 44, height: 10)
+        KxMenu.setTintColor(UIColor.white)
+        KxMenu.show(in: APPDELEGATE.window, from: rect, menuItems: itemArr)
     }
     
-    func chooseItem(sender:AnyObject) {
+    func chooseItem(_ sender:AnyObject) {
         APPDELEGATE.drawerVC?.disablePanGesture()
         
-        let settingNavCtrl = STORY.instantiateViewControllerWithIdentifier("settingCtrl") as! SRSettingViewController
+        let settingNavCtrl = STORY.instantiateViewController(withIdentifier: "settingCtrl") as! SRSettingViewController
         self.navigationController?.pushViewController(settingNavCtrl, animated: true)
     }
     

@@ -16,11 +16,11 @@ class SRTabBarController: UITabBarController, UITabBarControllerDelegate {
         // Do any additional setup after loading the view.
         self.delegate = self
         
-        let leftItem = UIButton(frame: CGRectMake(0, 0, 30, 30))
+        let leftItem = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         leftItem.layer.masksToBounds = true
         leftItem.layer.cornerRadius = leftItem.frame.width * 0.5
-        leftItem.setBackgroundImage(UIImage(named: "portrait"), forState: .Normal)
-        leftItem.addTarget(self, action: "revealLeftView:", forControlEvents: .TouchUpInside)
+        leftItem.setBackgroundImage(UIImage(named: "portrait"), for: UIControlState())
+        leftItem.addTarget(self, action: #selector(SRTabBarController.revealLeftView(_:)), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftItem)
         
 //        self.view.userInteractionEnabled = true
@@ -32,7 +32,7 @@ class SRTabBarController: UITabBarController, UITabBarControllerDelegate {
 //        APPDELEGATE.drawerVC?.close()
 //    }
     
-    func revealLeftView(sender: UIButton) {
+    func revealLeftView(_ sender: UIButton) {
         APPDELEGATE.drawerVC?.open()
     }
 
@@ -54,7 +54,7 @@ class SRTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     //The suppose of this method is that the title of navigationitem can't appear when a tabbarcontroller is the rootviewcontroller of navigationcontroller.
     //Rember set the tabbarcontroller.navigationitem.title to the title of controller in index 0 because first time this method couldn't be invoked.
-    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         let index = tabBarController.selectedIndex
         switch index {
         case 1:

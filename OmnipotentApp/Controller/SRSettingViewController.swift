@@ -17,10 +17,10 @@ class SRSettingViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var optionTableView: UITableView!
     
     var optionArr: [[String]]?
-    let statusView = UIView(frame: CGRectMake(0, 0, SCREENWITH, 20))
+    let statusView = UIView(frame: CGRect(x: 0, y: 0, width: SCREENWITH, height: 20))
     
-    override func viewWillAppear(animated: Bool) {
-        APPDELEGATE.drawerVC?.navigationController?.navigationBarHidden = true
+    override func viewWillAppear(_ animated: Bool) {
+        APPDELEGATE.drawerVC?.navigationController?.isNavigationBarHidden = true
         self.view.addSubview(statusView)
     }
     
@@ -29,7 +29,7 @@ class SRSettingViewController: UIViewController, UITableViewDataSource, UITableV
 
         // Do any additional setup after loading the view.
         
-        optionTableView.backgroundColor = UIColor.clearColor()
+        optionTableView.backgroundColor = UIColor.clear
         
         optionArr = [
             ["选项一", "tab_netwo"],
@@ -47,34 +47,34 @@ class SRSettingViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     // MARK: - Table view data source
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (optionArr?.count)!
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier")
         if cell == nil {
-            cell = UITableViewCell(style: .Value1, reuseIdentifier: "reuseIdentifier")
+            cell = UITableViewCell(style: .value1, reuseIdentifier: "reuseIdentifier")
         }
         // Configure the cell...
-        cell?.backgroundColor = UIColor.clearColor()
-        cell?.selectionStyle = .None
-        cell?.imageView?.image = UIImage(named: self.optionArr![indexPath.row][1])
-        cell?.textLabel?.text = self.optionArr![indexPath.row][0]
+        cell?.backgroundColor = UIColor.clear
+        cell?.selectionStyle = .none
+        cell?.imageView?.image = UIImage(named: self.optionArr![(indexPath as NSIndexPath).row][1])
+        cell?.textLabel?.text = self.optionArr![(indexPath as NSIndexPath).row][0]
         
         return cell!
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let story = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let login: UIViewController = story.instantiateViewControllerWithIdentifier("loginCtrl")
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let story = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let login: UIViewController = story.instantiateViewController(withIdentifier: "loginCtrl")
         
-        APPDELEGATE.drawerVC?.navigationController?.navigationBarHidden = false
-        APPDELEGATE.drawerVC?.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        APPDELEGATE.drawerVC?.navigationController?.isNavigationBarHidden = false
+        APPDELEGATE.drawerVC?.navigationController?.navigationBar.tintColor = UIColor.white
         APPDELEGATE.drawerVC?.navigationController!.pushViewController(login, animated: true)
     }
 
@@ -88,10 +88,10 @@ class SRSettingViewController: UIViewController, UITableViewDataSource, UITableV
     }
     */
 
-    @IBAction func clickAvatarBtn(sender: UIButton) {
+    @IBAction func clickAvatarBtn(_ sender: UIButton) {
     }
-    @IBAction func clickQRCodeBtn(sender: UIButton) {
+    @IBAction func clickQRCodeBtn(_ sender: UIButton) {
     }
-    @IBAction func clickSettingBtn(sender: UIButton) {
+    @IBAction func clickSettingBtn(_ sender: UIButton) {
     }
 }

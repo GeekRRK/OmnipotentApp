@@ -9,7 +9,7 @@
 import UIKit
 
 class SRCountdownViewController: UIViewController {
-    var timer: NSTimer?
+    var timer: Timer?
     var countdownNum = 3
     @IBOutlet weak var countdownLabel: UILabel!
     
@@ -17,7 +17,7 @@ class SRCountdownViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        timer =  NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countdown", userInfo: nil, repeats: true)
+        timer =  Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(SRCountdownViewController.countdown), userInfo: nil, repeats: true)
         timer?.fire()
     }
     
@@ -27,11 +27,12 @@ class SRCountdownViewController: UIViewController {
             timer = nil
             APPDELEGATE.enterApp()
         } else {
-            countdownLabel.text = "\(countdownNum--)"
+            countdownNum -= 1
+            countdownLabel.text = "\(countdownNum)"
         }
     }
 
-    @IBAction func skip(sender: UIButton) {
+    @IBAction func skip(_ sender: UIButton) {
         timer?.invalidate()
         timer = nil
         APPDELEGATE.enterApp()

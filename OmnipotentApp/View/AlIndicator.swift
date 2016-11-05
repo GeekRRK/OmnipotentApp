@@ -15,37 +15,37 @@ class AlIndicator: NSObject {
     var bkgView: UIView?
     var indicator: UIActivityIndicatorView?
 
-    func showIndicator(block: dispatch_block_t, completion: () -> Void) {
-        let keyWindow = UIApplication.sharedApplication().delegate?.window
+    func showIndicator(_ block: @escaping ()->(), completion: @escaping () -> Void) {
+        let keyWindow = UIApplication.shared.delegate?.window
         
         if bkgView == nil {
             bkgView = UIView(frame: keyWindow!!.rootViewController!.view.bounds)
-            bkgView?.backgroundColor = UIColor.whiteColor()
+            bkgView?.backgroundColor = UIColor.white
             bkgView?.alpha = 0.5
             keyWindow!!.addSubview(bkgView!)
         }
         
         if indicator == nil {
             indicator = UIActivityIndicatorView()
-            indicator?.color = UIColor.grayColor()
+            indicator?.color = UIColor.gray
             indicator?.center = (keyWindow!!.rootViewController?.view.center)!
             bkgView?.addSubview(indicator!)
         }
         
-        keyWindow!!.bringSubviewToFront(bkgView!)
-        bkgView?.hidden = false
-        indicator?.hidden = false
+        keyWindow!!.bringSubview(toFront: bkgView!)
+        bkgView?.isHidden = false
+        indicator?.isHidden = false
         indicator?.startAnimating()
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
             block()
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 [unowned self] () in
                 
                 self.indicator?.stopAnimating()
-                self.indicator?.hidden = true
-                self.bkgView?.hidden = true
+                self.indicator?.isHidden = true
+                self.bkgView?.isHidden = true
                 
                 completion()
             }

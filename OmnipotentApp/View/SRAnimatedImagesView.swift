@@ -9,8 +9,8 @@
 import UIKit
 
 protocol SRAnimatedImagesViewDelegate {
-    mutating func animatedImagesNumberOfImages(animatedImagesView: SRAnimatedImagesView) -> Int
-    mutating func animatedImagesView(animatedImagesView: SRAnimatedImagesView, imageAtIndex: Int) -> UIImage
+    mutating func animatedImagesNumberOfImages(_ animatedImagesView: SRAnimatedImagesView) -> Int
+    mutating func animatedImagesView(_ animatedImagesView: SRAnimatedImagesView, imageAtIndex: Int) -> UIImage
 }
 
 class SRAnimatedImagesView: UIView {
@@ -27,7 +27,7 @@ class SRAnimatedImagesView: UIView {
         }
     }
     
-    var timePerImage: NSTimeInterval?
+    var timePerImage: TimeInterval?
     
     var animating: Bool = false
     var totalImages: Int?
@@ -36,22 +36,22 @@ class SRAnimatedImagesView: UIView {
     
     var imageViews: NSArray?
     
-    var imageSwappingTimer: NSTimer?
+    var imageSwappingTimer: Timer?
     
     
     //MARK: - methods
     func _init() {
         let imageViews = NSMutableArray()
         for _ in 0..<2 {
-            let frm = CGRectMake(CGFloat(Double(-imageViewsBorderOffset) * 3.3), CGFloat(-imageViewsBorderOffset), self.bounds.size.width + CGFloat(Double(imageViewsBorderOffset) * 3.3), self.bounds.size.height + CGFloat(imageViewsBorderOffset * 2))
+            let frm = CGRect(x: CGFloat(Double(-imageViewsBorderOffset) * 3.3), y: CGFloat(-imageViewsBorderOffset), width: self.bounds.size.width + CGFloat(Double(imageViewsBorderOffset) * 3.3), height: self.bounds.size.height + CGFloat(imageViewsBorderOffset * 2))
             let imageView = UIImageView(frame: frm)
             
-            imageView.autoresizingMask = UIViewAutoresizing.FlexibleWidth.union(.FlexibleHeight)
-            imageView.contentMode = .ScaleAspectFill
+            imageView.autoresizingMask = UIViewAutoresizing.flexibleWidth.union(.flexibleHeight)
+            imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = false
             addSubview(imageView)
             
-            imageViews.addObject(imageView)
+            imageViews.add(imageView)
         }
         
         self.imageViews = imageViews.copy() as? NSArray
@@ -59,9 +59,9 @@ class SRAnimatedImagesView: UIView {
         currentlyDisplayingImageIndex = noImageDisplayingIndex
         currentlyDisplayingImageViewIndex = 0
         
-        self.timePerImage = NSTimeInterval(defaultTimePerImage)
+        self.timePerImage = TimeInterval(defaultTimePerImage)
         
-        self.imageSwappingTimer = NSTimer.scheduledTimerWithTimeInterval(self.timePerImage!, target: self, selector: "bringNextImage", userInfo: nil, repeats: true)
+        self.imageSwappingTimer = Timer.scheduledTimer(timeInterval: self.timePerImage!, target: self, selector: #selector(SRAnimatedImagesView.bringNextImage), userInfo: nil, repeats: true)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -86,7 +86,7 @@ class SRAnimatedImagesView: UIView {
             imageSwappingTimer?.invalidate()
             imageSwappingTimer = nil
             
-            UIView.animateWithDuration(NSTimeInterval(imageSwappingAnimationDuration), delay: 0.0, options: .BeginFromCurrentState, animations: {
+            UIView.animate(withDuration: TimeInterval(imageSwappingAnimationDuration), delay: 0.0, options: .beginFromCurrentState, animations: {
                 for imageView in (self.imageViews)! {
                     let imgView: UIImageView = imageView as! UIImageView
                     imgView.alpha = 0.0
@@ -99,10 +99,10 @@ class SRAnimatedImagesView: UIView {
     }
     
     func bringNextImage() {
-        let imageViewToHide: UIImageView = (imageViews?.objectAtIndex(currentlyDisplayingImageViewIndex!))! as! UIImageView
+        let imageViewToHide: UIImageView = (imageViews?.object(at: currentlyDisplayingImageViewIndex!))! as! UIImageView
         currentlyDisplayingImageViewIndex = currentlyDisplayingImageViewIndex == 0 ? 1 : 0
         
-        let imageViewToShow: UIImageView = (imageViews?.objectAtIndex(currentlyDisplayingImageViewIndex!))! as! UIImageView
+        let imageViewToShow: UIImageView = (imageViews?.object(at: currentlyDisplayingImageViewIndex!))! as! UIImageView
         var nextImageToShowIndex = currentlyDisplayingImageIndex
         
         repeat {
@@ -114,24 +114,24 @@ class SRAnimatedImagesView: UIView {
         
         let kMovementAndTransitionTimeOffset: CGFloat = 0.1
         
-        UIView.animateWithDuration(self.timePerImage! + NSTimeInterval(self.imageSwappingAnimationDuration + kMovementAndTransitionTimeOffset), delay: 0.0, options: UIViewAnimationOptions.BeginFromCurrentState.union(.CurveLinear), animations: {
+        UIView.animate(withDuration: self.timePerImage! + TimeInterval(self.imageSwappingAnimationDuration + kMovementAndTransitionTimeOffset), delay: 0.0, options: UIViewAnimationOptions.beginFromCurrentState.union(.curveLinear), animations: {
             let randomTranslationValueX = Int(Double(self.imageViewsBorderOffset) * 3.5) - SRAnimatedImagesView.randomIntBetweenNumber(0, maxNumber: self.imageViewsBorderOffset)
             let randomTranslationValueY = 0
-            let translationTransform = CGAffineTransformMakeTranslation(CGFloat(randomTranslationValueX), CGFloat(randomTranslationValueY))
+            let translationTransform = CGAffineTransform(translationX: CGFloat(randomTranslationValueX), y: CGFloat(randomTranslationValueY))
             let randomScaleTransformValue = SRAnimatedImagesView.randomIntBetweenNumber(115, maxNumber: 120) / 100
-            let scaleTransform = CGAffineTransformMakeScale(CGFloat(randomScaleTransformValue), CGFloat(randomScaleTransformValue))
+            let scaleTransform = CGAffineTransform(scaleX: CGFloat(randomScaleTransformValue), y: CGFloat(randomScaleTransformValue))
             
-            imageViewToShow.transform = CGAffineTransformConcat(scaleTransform, translationTransform)
+            imageViewToShow.transform = scaleTransform.concatenating(translationTransform)
             }, completion: { (Bool) in
                 
         })
         
-        UIView.animateWithDuration(NSTimeInterval(imageSwappingAnimationDuration), delay: NSTimeInterval(kMovementAndTransitionTimeOffset), options: UIViewAnimationOptions.BeginFromCurrentState.union(.CurveLinear), animations: {
+        UIView.animate(withDuration: TimeInterval(imageSwappingAnimationDuration), delay: TimeInterval(kMovementAndTransitionTimeOffset), options: UIViewAnimationOptions.beginFromCurrentState.union(.curveLinear), animations: {
             imageViewToShow.alpha = 1.0
                 imageViewToHide.alpha = 0.0
             }, completion: { (finished: Bool) in
                 if finished {
-                    imageViewToHide.transform = CGAffineTransformIdentity
+                    imageViewToHide.transform = CGAffineTransform.identity
                 }
         })
         
@@ -142,7 +142,7 @@ class SRAnimatedImagesView: UIView {
         self.imageSwappingTimer?.fire()
     }
     
-    class func randomIntBetweenNumber(minNumber: Int, maxNumber: Int) -> Int {
+    class func randomIntBetweenNumber(_ minNumber: Int, maxNumber: Int) -> Int {
         if minNumber > maxNumber {
             return randomIntBetweenNumber(maxNumber, maxNumber: minNumber)
         }

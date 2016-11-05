@@ -13,21 +13,21 @@ class SRUnderlineTextField: UITextField {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
         //Get the current drawing context
-        let context: CGContextRef = UIGraphicsGetCurrentContext()!;
+        let context: CGContext = UIGraphicsGetCurrentContext()!;
         
         //Set the line color and width
         if self.highlited == true {
-            CGContextSetStrokeColorWithColor(context, COLOR_LOGINBTN_HIGHTED.CGColor);
+            context.setStrokeColor(COLOR_LOGINBTN_HIGHTED.cgColor);
         } else {
-            CGContextSetStrokeColorWithColor(context, COLOR_UNDERLINE_WHITE.CGColor);
+            context.setStrokeColor(COLOR_UNDERLINE_WHITE.cgColor);
         }
-        CGContextSetLineWidth(context, 1.0);
+        context.setLineWidth(1.0);
         
         //Start a new Path
-        CGContextBeginPath(context);
+        context.beginPath();
         
         //Find the number of lines in our textView + add a bit more height to draw lines in the empty part of the view
         //NSUInteger numberOfLines = (self.contentSize.height + self.bounds.size.height) / self.font.leading;
@@ -39,11 +39,11 @@ class SRUnderlineTextField: UITextField {
         //for (int x = 1; x < numberOfLines; x++) {
         
         //0.5f offset lines up line with pixel boundary
-        CGContextMoveToPoint(context, self.bounds.origin.x, baselineOffset);
-        CGContextAddLineToPoint(context, self.bounds.size.width - 10, baselineOffset);
+        context.move(to: CGPoint(x: self.bounds.origin.x, y: baselineOffset));
+        context.addLine(to: CGPoint(x: self.bounds.size.width - 10, y: baselineOffset));
         
         //Close our Path and Stroke (draw) it
-        CGContextClosePath(context);
-        CGContextStrokePath(context);
+        context.closePath();
+        context.strokePath();
     }
 }

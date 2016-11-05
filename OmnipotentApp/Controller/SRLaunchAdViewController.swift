@@ -22,7 +22,7 @@ class SRLaunchAdViewController: UIViewController, UIScrollViewDelegate {
     }
 
     func setupScrollView() {
-        var viewRect = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+        var viewRect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         
         let ad1 = UIImageView(frame: viewRect)
         ad1.image = UIImage(named: "portrait")
@@ -38,12 +38,12 @@ class SRLaunchAdViewController: UIViewController, UIScrollViewDelegate {
         ad3.image = UIImage(named: "login_background")
         scrollView.addSubview(ad3)
         
-        scrollView.contentSize = CGSizeMake(viewRect.width * 3, viewRect.height)
+        scrollView.contentSize = CGSize(width: viewRect.width * 3, height: viewRect.height)
         scrollView.delegate = self
-        pageControl.addTarget(self, action: "changePage:", forControlEvents: .ValueChanged)
+        pageControl.addTarget(self, action: #selector(SRLaunchAdViewController.changePage(_:)), for: .valueChanged)
     }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageWidth = scrollView.frame.size.width
         
         if pageControl.currentPage == 2 {
@@ -56,7 +56,7 @@ class SRLaunchAdViewController: UIViewController, UIScrollViewDelegate {
         pageControl.currentPage = Int(page)
     }
     
-    func changePage(sender: AnyObject) {
+    func changePage(_ sender: AnyObject) {
         var rect = scrollView.frame
         rect.origin.x = CGFloat(pageControl.currentPage) * scrollView.frame.width
         rect.origin.y = 0
