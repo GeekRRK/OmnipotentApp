@@ -32,12 +32,26 @@ class ProductsTableViewController: UITableViewController {
         
         return 0
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        
+        cell.textLabel?.text = products?[(indexPath as NSIndexPath).row].name
+        
+        if let imageName = products?[(indexPath as NSIndexPath).row].cellImageName {
+            cell.imageView?.image = UIImage(named: imageName)
+        }
+        
+        return cell
+    }
 
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showProduct" {
-            if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell), let productVC = segue.destination as? ProductViewController {
+            if let cell = sender as? UITableViewCell,
+                let indexPath = tableView.indexPath(for: cell),
+                let productVC = segue.destination as? ProductViewController {
                     productVC.product = products?[(indexPath as NSIndexPath).row]
             }
         }
