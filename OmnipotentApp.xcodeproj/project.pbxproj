@@ -8,17 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		28772F327B61E53E85EDE3F1 /* libPods-OmnipotentApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9702F6B18ABCCB3BC3B2D2 /* libPods-OmnipotentApp.a */; };
+		612125691EE1532C00170EE1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612125641EE1532C00170EE1 /* DetailViewController.swift */; };
+		6121256A1EE1532C00170EE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612125651EE1532C00170EE1 /* Main.storyboard */; };
+		6121256B1EE1532C00170EE1 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612125661EE1532C00170EE1 /* ToDoItem.swift */; };
+		6121256C1EE1532C00170EE1 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612125671EE1532C00170EE1 /* TodoViewController.swift */; };
+		6121256D1EE1532C00170EE1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612125681EE1532C00170EE1 /* Utils.swift */; };
 		61E370331EBF02660049063E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E370321EBF02660049063E /* AppDelegate.swift */; };
-		61E370381EBF07A30049063E /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E370371EBF07A30049063E /* ProductsTableViewController.swift */; };
-		61E3703C1EBF089B0049063E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E3703B1EBF089B0049063E /* Product.swift */; };
-		61E3703E1EBF0B130049063E /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E3703D1EBF0B130049063E /* ProductViewController.swift */; };
-		61E370401EBF0ECA0049063E /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E3703F1EBF0ECA0049063E /* ContactViewController.swift */; };
-		61E370421EDE5F180049063E /* Main3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61E370411EDE5F180049063E /* Main3.storyboard */; };
-		61E3704D1EDFF74C0049063E /* LoveTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E3704B1EDFF74C0049063E /* LoveTweetViewController.swift */; };
-		61E3704E1EDFF74C0049063E /* Main4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61E3704C1EDFF74C0049063E /* Main4.storyboard */; };
-		61E370571EDFF7ED0049063E /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E370551EDFF7ED0049063E /* Stopwatch.swift */; };
-		61E370581EDFF7ED0049063E /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E370561EDFF7ED0049063E /* StopwatchViewController.swift */; };
-		61E3705A1EDFF8DB0049063E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61E370591EDFF8DB0049063E /* Main.storyboard */; };
 		7102B24C1C0BE93500497F95 /* OmnipotentAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102B24B1C0BE93500497F95 /* OmnipotentAppTests.swift */; };
 		7102B2571C0BE93500497F95 /* OmnipotentAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102B2561C0BE93500497F95 /* OmnipotentAppUITests.swift */; };
 		71056B841C0D79B00062B294 /* SRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71056B821C0D79B00062B294 /* SRLoginViewController.swift */; };
@@ -62,17 +57,12 @@
 
 /* Begin PBXFileReference section */
 		398944F4D3B27DDD2322C5A2 /* Pods-OmnipotentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnipotentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-OmnipotentApp/Pods-OmnipotentApp.release.xcconfig"; sourceTree = "<group>"; };
+		612125641EE1532C00170EE1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		612125651EE1532C00170EE1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		612125661EE1532C00170EE1 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		612125671EE1532C00170EE1 /* TodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		612125681EE1532C00170EE1 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		61E370321EBF02660049063E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		61E370371EBF07A30049063E /* ProductsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
-		61E3703B1EBF089B0049063E /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		61E3703D1EBF0B130049063E /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
-		61E3703F1EBF0ECA0049063E /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
-		61E370411EDE5F180049063E /* Main3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main3.storyboard; sourceTree = "<group>"; };
-		61E3704B1EDFF74C0049063E /* LoveTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoveTweetViewController.swift; sourceTree = "<group>"; };
-		61E3704C1EDFF74C0049063E /* Main4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main4.storyboard; sourceTree = "<group>"; };
-		61E370551EDFF7ED0049063E /* Stopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
-		61E370561EDFF7ED0049063E /* StopwatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
-		61E370591EDFF8DB0049063E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7102B2301C0BE93500497F95 /* OmnipotentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmnipotentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7102B2471C0BE93500497F95 /* OmnipotentAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmnipotentAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7102B24B1C0BE93500497F95 /* OmnipotentAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmnipotentAppTests.swift; sourceTree = "<group>"; };
@@ -138,42 +128,13 @@
 		61E370311EBF02350049063E /* Learning */ = {
 			isa = PBXGroup;
 			children = (
-				61E370541EDFF7ED0049063E /* Stopwatch */,
-				61E3704A1EDFF74C0049063E /* LoveTweet */,
-				61E370341EBF043A0049063E /* GoodAsOldPhones */,
+				612125641EE1532C00170EE1 /* DetailViewController.swift */,
+				612125651EE1532C00170EE1 /* Main.storyboard */,
+				612125661EE1532C00170EE1 /* ToDoItem.swift */,
+				612125671EE1532C00170EE1 /* TodoViewController.swift */,
+				612125681EE1532C00170EE1 /* Utils.swift */,
 			);
 			path = Learning;
-			sourceTree = "<group>";
-		};
-		61E370341EBF043A0049063E /* GoodAsOldPhones */ = {
-			isa = PBXGroup;
-			children = (
-				61E370411EDE5F180049063E /* Main3.storyboard */,
-				61E370371EBF07A30049063E /* ProductsTableViewController.swift */,
-				61E3703B1EBF089B0049063E /* Product.swift */,
-				61E3703D1EBF0B130049063E /* ProductViewController.swift */,
-				61E3703F1EBF0ECA0049063E /* ContactViewController.swift */,
-			);
-			path = GoodAsOldPhones;
-			sourceTree = "<group>";
-		};
-		61E3704A1EDFF74C0049063E /* LoveTweet */ = {
-			isa = PBXGroup;
-			children = (
-				61E3704B1EDFF74C0049063E /* LoveTweetViewController.swift */,
-				61E3704C1EDFF74C0049063E /* Main4.storyboard */,
-			);
-			path = LoveTweet;
-			sourceTree = "<group>";
-		};
-		61E370541EDFF7ED0049063E /* Stopwatch */ = {
-			isa = PBXGroup;
-			children = (
-				61E370591EDFF8DB0049063E /* Main.storyboard */,
-				61E370551EDFF7ED0049063E /* Stopwatch.swift */,
-				61E370561EDFF7ED0049063E /* StopwatchViewController.swift */,
-			);
-			path = Stopwatch;
 			sourceTree = "<group>";
 		};
 		6B45B198A472DFDB641739C0 /* Frameworks */ = {
@@ -442,10 +403,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61E3705A1EDFF8DB0049063E /* Main.storyboard in Resources */,
 				71CA991B1C1684AD0013FCBD /* Info.plist in Resources */,
-				61E370421EDE5F180049063E /* Main3.storyboard in Resources */,
-				61E3704E1EDFF74C0049063E /* Main4.storyboard in Resources */,
+				6121256A1EE1532C00170EE1 /* Main.storyboard in Resources */,
 				71CA991A1C1684AD0013FCBD /* Main2.storyboard in Resources */,
 				71CA99181C1684AD0013FCBD /* Assets.xcassets in Resources */,
 				71CA99191C1684AD0013FCBD /* LaunchScreen.storyboard in Resources */,
@@ -521,27 +480,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61E370571EDFF7ED0049063E /* Stopwatch.swift in Sources */,
-				61E3703E1EBF0B130049063E /* ProductViewController.swift in Sources */,
-				61E3703C1EBF089B0049063E /* Product.swift in Sources */,
-				61E3704D1EDFF74C0049063E /* LoveTweetViewController.swift in Sources */,
+				6121256C1EE1532C00170EE1 /* TodoViewController.swift in Sources */,
+				6121256B1EE1532C00170EE1 /* ToDoItem.swift in Sources */,
 				71CA991C1C1684AD0013FCBD /* OmnipotentApp.xcdatamodeld in Sources */,
 				71056B841C0D79B00062B294 /* SRLoginViewController.swift in Sources */,
 				719B9B861C153616004F1A5F /* SRCountdownViewController.swift in Sources */,
 				719B9B971C157E45004F1A5F /* LDrawerViewController.m in Sources */,
 				7186A6701C76F109009B5E7A /* AlIndicator.swift in Sources */,
 				711060C91C0C133500B25979 /* SRUnderlineTextField.swift in Sources */,
-				61E370401EBF0ECA0049063E /* ContactViewController.swift in Sources */,
 				711797561C117D3D0048D860 /* SRUtil.swift in Sources */,
-				61E370581EDFF7ED0049063E /* StopwatchViewController.swift in Sources */,
 				719B9B8E1C156C4F004F1A5F /* ZWAdView.m in Sources */,
 				71056B981C0DA06A0062B294 /* KxMenu.m in Sources */,
+				612125691EE1532C00170EE1 /* DetailViewController.swift in Sources */,
 				719B9B961C157E45004F1A5F /* LCnterView.m in Sources */,
 				71056B9A1C0DA42D0062B294 /* SRHomePageViewController.swift in Sources */,
 				719B9B841C152836004F1A5F /* SRLaunchAdViewController.swift in Sources */,
 				71FA85831C0E96B100F6F4B1 /* SRMsgViewController.swift in Sources */,
-				61E370381EBF07A30049063E /* ProductsTableViewController.swift in Sources */,
 				71056B8A1C0D81DE0062B294 /* SRTabBarController.swift in Sources */,
+				6121256D1EE1532C00170EE1 /* Utils.swift in Sources */,
 				710E013B1C1019C90035E244 /* SRSettingViewController.swift in Sources */,
 				61E370331EBF02660049063E /* AppDelegate.swift in Sources */,
 				7142BA721C0C3E2E0021D588 /* SRAnimatedImagesView.swift in Sources */,
