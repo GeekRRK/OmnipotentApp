@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StopwatchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class StopwatchViewController: UIViewController, UITableViewDelegate {
     fileprivate let mainStopwatch: Stopwatch = Stopwatch()
     fileprivate let lapStopwatch: Stopwatch = Stopwatch()
     fileprivate var isPlay: Bool = false
@@ -137,4 +137,28 @@ class StopwatchViewController: UIViewController, UITableViewDelegate, UITableVie
 }
 
 // MARK: tableView dataSource
-extension
+extension StopwatchViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return laps.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier: String = "lapCell"
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        
+        if let labelNum = cell.viewWithTag(11) as? UILabel {
+            labelNum.text = "Lap \(laps.count - (indexPath as NSIndexPath).row)"
+        }
+        
+        if let labelTimer = cell.viewWithTag(12) as? UILabel {
+            labelTimer.text = laps[laps.count - (indexPath as NSIndexPath).row - 1]
+        }
+        
+        return cell
+    }
+}
+
+private extension Selector {
+    static let updateMainTimer = #selector(StopwatchViewController.updateMainTimer)
+    static let updateLapTimer = #selector(StopwatchViewController.updateLapTimer)
+}

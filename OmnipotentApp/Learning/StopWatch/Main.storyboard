@@ -136,7 +136,6 @@
                     <navigationItem key="navigationItem" title="Stopwatch" id="ekQ-sa-j6e"/>
                     <connections>
                         <outlet property="lapResetButton" destination="ZfJ-Dq-X6P" id="gXG-rs-Pxe"/>
-                        <outlet property="lapRestButton" destination="ZfJ-Dq-X6P" id="0Wf-nt-YO3"/>
                         <outlet property="lapTimerLabel" destination="NQK-7r-L5v" id="eqQ-1H-5ED"/>
                         <outlet property="lapsTableView" destination="WKb-Nl-l1h" id="3bE-Bx-arx"/>
                         <outlet property="playPauseButton" destination="cQf-tc-ESh" id="lC4-mT-19C"/>
