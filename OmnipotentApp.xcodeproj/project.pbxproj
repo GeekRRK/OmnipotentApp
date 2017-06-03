@@ -8,11 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		28772F327B61E53E85EDE3F1 /* libPods-OmnipotentApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9702F6B18ABCCB3BC3B2D2 /* libPods-OmnipotentApp.a */; };
-		612125691EE1532C00170EE1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612125641EE1532C00170EE1 /* DetailViewController.swift */; };
-		6121256A1EE1532C00170EE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612125651EE1532C00170EE1 /* Main.storyboard */; };
-		6121256B1EE1532C00170EE1 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612125661EE1532C00170EE1 /* ToDoItem.swift */; };
-		6121256C1EE1532C00170EE1 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612125671EE1532C00170EE1 /* TodoViewController.swift */; };
-		6121256D1EE1532C00170EE1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612125681EE1532C00170EE1 /* Utils.swift */; };
+		612125721EE1543100170EE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612125711EE1543100170EE1 /* Main.storyboard */; };
 		61E370331EBF02660049063E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E370321EBF02660049063E /* AppDelegate.swift */; };
 		7102B24C1C0BE93500497F95 /* OmnipotentAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102B24B1C0BE93500497F95 /* OmnipotentAppTests.swift */; };
 		7102B2571C0BE93500497F95 /* OmnipotentAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102B2561C0BE93500497F95 /* OmnipotentAppUITests.swift */; };
@@ -57,11 +53,7 @@
 
 /* Begin PBXFileReference section */
 		398944F4D3B27DDD2322C5A2 /* Pods-OmnipotentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnipotentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-OmnipotentApp/Pods-OmnipotentApp.release.xcconfig"; sourceTree = "<group>"; };
-		612125641EE1532C00170EE1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		612125651EE1532C00170EE1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		612125661EE1532C00170EE1 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
-		612125671EE1532C00170EE1 /* TodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
-		612125681EE1532C00170EE1 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		612125711EE1543100170EE1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		61E370321EBF02660049063E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7102B2301C0BE93500497F95 /* OmnipotentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmnipotentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7102B2471C0BE93500497F95 /* OmnipotentAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmnipotentAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,14 +117,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6121256E1EE1542000170EE1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6121256F1EE1542000170EE1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		612125701EE1542000170EE1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				612125711EE1543100170EE1 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		61E370311EBF02350049063E /* Learning */ = {
 			isa = PBXGroup;
 			children = (
-				612125641EE1532C00170EE1 /* DetailViewController.swift */,
-				612125651EE1532C00170EE1 /* Main.storyboard */,
-				612125661EE1532C00170EE1 /* ToDoItem.swift */,
-				612125671EE1532C00170EE1 /* TodoViewController.swift */,
-				612125681EE1532C00170EE1 /* Utils.swift */,
+				612125701EE1542000170EE1 /* Views */,
+				6121256E1EE1542000170EE1 /* Controllers */,
+				6121256F1EE1542000170EE1 /* Models */,
 			);
 			path = Learning;
 			sourceTree = "<group>";
@@ -404,7 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71CA991B1C1684AD0013FCBD /* Info.plist in Resources */,
-				6121256A1EE1532C00170EE1 /* Main.storyboard in Resources */,
+				612125721EE1543100170EE1 /* Main.storyboard in Resources */,
 				71CA991A1C1684AD0013FCBD /* Main2.storyboard in Resources */,
 				71CA99181C1684AD0013FCBD /* Assets.xcassets in Resources */,
 				71CA99191C1684AD0013FCBD /* LaunchScreen.storyboard in Resources */,
@@ -480,8 +492,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6121256C1EE1532C00170EE1 /* TodoViewController.swift in Sources */,
-				6121256B1EE1532C00170EE1 /* ToDoItem.swift in Sources */,
 				71CA991C1C1684AD0013FCBD /* OmnipotentApp.xcdatamodeld in Sources */,
 				71056B841C0D79B00062B294 /* SRLoginViewController.swift in Sources */,
 				719B9B861C153616004F1A5F /* SRCountdownViewController.swift in Sources */,
@@ -491,13 +501,11 @@
 				711797561C117D3D0048D860 /* SRUtil.swift in Sources */,
 				719B9B8E1C156C4F004F1A5F /* ZWAdView.m in Sources */,
 				71056B981C0DA06A0062B294 /* KxMenu.m in Sources */,
-				612125691EE1532C00170EE1 /* DetailViewController.swift in Sources */,
 				719B9B961C157E45004F1A5F /* LCnterView.m in Sources */,
 				71056B9A1C0DA42D0062B294 /* SRHomePageViewController.swift in Sources */,
 				719B9B841C152836004F1A5F /* SRLaunchAdViewController.swift in Sources */,
 				71FA85831C0E96B100F6F4B1 /* SRMsgViewController.swift in Sources */,
 				71056B8A1C0D81DE0062B294 /* SRTabBarController.swift in Sources */,
-				6121256D1EE1532C00170EE1 /* Utils.swift in Sources */,
 				710E013B1C1019C90035E244 /* SRSettingViewController.swift in Sources */,
 				61E370331EBF02660049063E /* AppDelegate.swift in Sources */,
 				7142BA721C0C3E2E0021D588 /* SRAnimatedImagesView.swift in Sources */,
