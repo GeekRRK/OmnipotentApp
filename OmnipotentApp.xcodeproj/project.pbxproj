@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		28772F327B61E53E85EDE3F1 /* libPods-OmnipotentApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9702F6B18ABCCB3BC3B2D2 /* libPods-OmnipotentApp.a */; };
 		612125721EE1543100170EE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612125711EE1543100170EE1 /* Main.storyboard */; };
+		612125751EE3979100170EE1 /* artists.json in Resources */ = {isa = PBXBuildFile; fileRef = 612125741EE3979100170EE1 /* artists.json */; };
+		612125771EE397D100170EE1 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612125761EE397D100170EE1 /* Artist.swift */; };
+		612125791EE3981500170EE1 /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612125781EE3981500170EE1 /* Work.swift */; };
+		6121257B1EE39C8000170EE1 /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6121257A1EE39C8000170EE1 /* ArtistTableViewCell.swift */; };
+		6121257D1EE39CE300170EE1 /* WorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6121257C1EE39CE300170EE1 /* WorkTableViewCell.swift */; };
+		6121257F1EE39D4A00170EE1 /* ArtistListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6121257E1EE39D4A00170EE1 /* ArtistListViewController.swift */; };
+		612125811EE39F3000170EE1 /* ArtistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612125801EE39F3000170EE1 /* ArtistDetailViewController.swift */; };
 		61E370331EBF02660049063E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E370321EBF02660049063E /* AppDelegate.swift */; };
 		7102B24C1C0BE93500497F95 /* OmnipotentAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102B24B1C0BE93500497F95 /* OmnipotentAppTests.swift */; };
 		7102B2571C0BE93500497F95 /* OmnipotentAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102B2561C0BE93500497F95 /* OmnipotentAppUITests.swift */; };
@@ -54,6 +61,13 @@
 /* Begin PBXFileReference section */
 		398944F4D3B27DDD2322C5A2 /* Pods-OmnipotentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnipotentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-OmnipotentApp/Pods-OmnipotentApp.release.xcconfig"; sourceTree = "<group>"; };
 		612125711EE1543100170EE1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		612125741EE3979100170EE1 /* artists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = artists.json; sourceTree = "<group>"; };
+		612125761EE397D100170EE1 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		612125781EE3981500170EE1 /* Work.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
+		6121257A1EE39C8000170EE1 /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
+		6121257C1EE39CE300170EE1 /* WorkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkTableViewCell.swift; sourceTree = "<group>"; };
+		6121257E1EE39D4A00170EE1 /* ArtistListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistListViewController.swift; sourceTree = "<group>"; };
+		612125801EE39F3000170EE1 /* ArtistDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewController.swift; sourceTree = "<group>"; };
 		61E370321EBF02660049063E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7102B2301C0BE93500497F95 /* OmnipotentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmnipotentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7102B2471C0BE93500497F95 /* OmnipotentAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmnipotentAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +134,8 @@
 		6121256E1EE1542000170EE1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6121257E1EE39D4A00170EE1 /* ArtistListViewController.swift */,
+				612125801EE39F3000170EE1 /* ArtistDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -127,6 +143,8 @@
 		6121256F1EE1542000170EE1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				612125761EE397D100170EE1 /* Artist.swift */,
+				612125781EE3981500170EE1 /* Work.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -135,8 +153,18 @@
 			isa = PBXGroup;
 			children = (
 				612125711EE1543100170EE1 /* Main.storyboard */,
+				6121257A1EE39C8000170EE1 /* ArtistTableViewCell.swift */,
+				6121257C1EE39CE300170EE1 /* WorkTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		612125731EE3978B00170EE1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				612125741EE3979100170EE1 /* artists.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		61E370311EBF02350049063E /* Learning */ = {
@@ -145,6 +173,7 @@
 				612125701EE1542000170EE1 /* Views */,
 				6121256E1EE1542000170EE1 /* Controllers */,
 				6121256F1EE1542000170EE1 /* Models */,
+				612125731EE3978B00170EE1 /* Resources */,
 			);
 			path = Learning;
 			sourceTree = "<group>";
@@ -419,6 +448,7 @@
 				612125721EE1543100170EE1 /* Main.storyboard in Resources */,
 				71CA991A1C1684AD0013FCBD /* Main2.storyboard in Resources */,
 				71CA99181C1684AD0013FCBD /* Assets.xcassets in Resources */,
+				612125751EE3979100170EE1 /* artists.json in Resources */,
 				71CA99191C1684AD0013FCBD /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,7 +523,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				71CA991C1C1684AD0013FCBD /* OmnipotentApp.xcdatamodeld in Sources */,
+				6121257D1EE39CE300170EE1 /* WorkTableViewCell.swift in Sources */,
 				71056B841C0D79B00062B294 /* SRLoginViewController.swift in Sources */,
+				6121257B1EE39C8000170EE1 /* ArtistTableViewCell.swift in Sources */,
 				719B9B861C153616004F1A5F /* SRCountdownViewController.swift in Sources */,
 				719B9B971C157E45004F1A5F /* LDrawerViewController.m in Sources */,
 				7186A6701C76F109009B5E7A /* AlIndicator.swift in Sources */,
@@ -501,9 +533,13 @@
 				711797561C117D3D0048D860 /* SRUtil.swift in Sources */,
 				719B9B8E1C156C4F004F1A5F /* ZWAdView.m in Sources */,
 				71056B981C0DA06A0062B294 /* KxMenu.m in Sources */,
+				6121257F1EE39D4A00170EE1 /* ArtistListViewController.swift in Sources */,
+				612125811EE39F3000170EE1 /* ArtistDetailViewController.swift in Sources */,
+				612125791EE3981500170EE1 /* Work.swift in Sources */,
 				719B9B961C157E45004F1A5F /* LCnterView.m in Sources */,
 				71056B9A1C0DA42D0062B294 /* SRHomePageViewController.swift in Sources */,
 				719B9B841C152836004F1A5F /* SRLaunchAdViewController.swift in Sources */,
+				612125771EE397D100170EE1 /* Artist.swift in Sources */,
 				71FA85831C0E96B100F6F4B1 /* SRMsgViewController.swift in Sources */,
 				71056B8A1C0D81DE0062B294 /* SRTabBarController.swift in Sources */,
 				710E013B1C1019C90035E244 /* SRSettingViewController.swift in Sources */,

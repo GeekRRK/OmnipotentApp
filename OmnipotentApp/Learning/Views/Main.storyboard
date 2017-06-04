@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zxs-cT-8iI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zxs-cT-8iI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,7 +14,7 @@
         <!--Artistry-->
         <scene sceneID="rjY-pa-Lk0">
             <objects>
-                <viewController title="Artistry" id="dbd-ze-MB6" customClass="ArtistListViewController" customModule="Artistry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Artistry" id="dbd-ze-MB6" customClass="ArtistListViewController" customModule="OmnipotentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QQX-GO-w9i"/>
                         <viewControllerLayoutGuide type="bottom" id="AQB-zh-N6v"/>
@@ -29,11 +29,11 @@
                                 <color key="separatorColor" red="0.44705882352941173" green="0.44705882352941173" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="166" id="cvZ-Xf-8Mf" customClass="ArtistTableViewCell" customModule="Artistry" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="166" id="cvZ-Xf-8Mf" customClass="ArtistTableViewCell" customModule="OmnipotentApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="383" height="166"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cvZ-Xf-8Mf" id="tZj-Bl-H4M">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="165"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="165.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNn-JF-i0B">
@@ -70,9 +70,9 @@
                                             <constraint firstItem="nhg-UL-2I7" firstAttribute="width" secondItem="cvZ-Xf-8Mf" secondAttribute="width" multiplier="0.5" id="QLZ-a0-l5F"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="artistImageView" destination="nhg-UL-2I7" id="N6B-w9-WJ4"/>
-                                            <outlet property="bioLabel" destination="LNn-JF-i0B" id="56V-C8-mLb"/>
-                                            <outlet property="nameLabel" destination="84Q-On-rPF" id="YF6-SG-TXg"/>
+                                            <outlet property="artistImageView" destination="nhg-UL-2I7" id="nQs-RH-IdL"/>
+                                            <outlet property="bioLabel" destination="LNn-JF-i0B" id="OxX-A7-7xo"/>
+                                            <outlet property="nameLabel" destination="84Q-On-rPF" id="ZZo-XL-wj0"/>
                                             <segue destination="P2C-XC-Cyp" kind="show" identifier="ShowArtist" id="F6a-xh-OQB"/>
                                         </connections>
                                     </tableViewCell>
@@ -92,7 +92,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Artistry" id="pQX-K4-seT"/>
                     <connections>
-                        <outlet property="tableView" destination="3T7-ta-1Bo" id="EPD-9w-Thn"/>
+                        <outlet property="tableView" destination="3T7-ta-1Bo" id="Mek-AZ-Oe3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAV-o0-Jr9" sceneMemberID="firstResponder"/>
@@ -102,7 +102,7 @@
         <!--Artist Detail View Controller-->
         <scene sceneID="N7F-W7-1II">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="P2C-XC-Cyp" customClass="ArtistDetailViewController" customModule="Artistry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="P2C-XC-Cyp" customClass="ArtistDetailViewController" customModule="OmnipotentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j6f-MT-LjV"/>
                         <viewControllerLayoutGuide type="bottom" id="jY0-12-3M2"/>
@@ -117,11 +117,11 @@
                                 <color key="separatorColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="277" id="PvN-Eb-qO8" customClass="WorkTableViewCell" customModule="Artistry" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="277" id="PvN-Eb-qO8" customClass="WorkTableViewCell" customModule="OmnipotentApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="383" height="277"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PvN-Eb-qO8" id="MJV-73-Ltb">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="276"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="276.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qlH-Cp-CfE">
@@ -155,9 +155,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="moreInfoTextView" destination="z7X-Sm-QE0" id="n6S-30-8F0"/>
-                                            <outlet property="workImageView" destination="qlH-Cp-CfE" id="7V8-Ii-c5Y"/>
-                                            <outlet property="workTitleLabel" destination="jk1-Yo-DMh" id="E02-z1-dEm"/>
+                                            <outlet property="moreInfoTextView" destination="z7X-Sm-QE0" id="6UD-pg-BVo"/>
+                                            <outlet property="workImageView" destination="qlH-Cp-CfE" id="uHV-KP-ngS"/>
+                                            <outlet property="workTitleLabel" destination="jk1-Yo-DMh" id="tSl-4C-MNE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -176,7 +176,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="QXS-BF-H9u" id="4WB-ah-HKU"/>
+                        <outlet property="tableView" destination="QXS-BF-H9u" id="oUI-f5-GHq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UpQ-1Q-2wR" userLabel="First Responder" sceneMemberID="firstResponder"/>
