@@ -10,12 +10,16 @@
 		612125991EE3F38100170EE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612125851EE3F38100170EE1 /* AppDelegate.swift */; };
 		6121259B1EE3F38100170EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6121258A1EE3F38100170EE1 /* Assets.xcassets */; };
 		6121259C1EE3F38100170EE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6121258B1EE3F38100170EE1 /* LaunchScreen.storyboard */; };
-		6121259E1EE3F38100170EE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6121258E1EE3F38100170EE1 /* Main.storyboard */; };
 		612125A01EE3F38100170EE1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 612125941EE3F38100170EE1 /* Info.plist */; };
 		612125A21EE3F38100170EE1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 612125971EE3F38100170EE1 /* Info.plist */; };
-		612125A51EE4EAD400170EE1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612125A41EE4EAD400170EE1 /* DetailViewController.swift */; };
-		612125A71EE4EADB00170EE1 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612125A61EE4EADB00170EE1 /* MasterViewController.swift */; };
-		612125A91EE4EAEA00170EE1 /* Candy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612125A81EE4EAEA00170EE1 /* Candy.swift */; };
+		61A405C01EE63BB900909639 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A405BF1EE63BB900909639 /* Main.storyboard */; };
+		61A405C61EE63C7600909639 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A405C51EE63C7600909639 /* LibraryAPI.swift */; };
+		61A405C81EE63CA300909639 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A405C71EE63CA300909639 /* PersistencyManager.swift */; };
+		61A405CA1EE63F2E00909639 /* PokemonConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A405C91EE63F2E00909639 /* PokemonConstants.swift */; };
+		61A405CC1EE63F6C00909639 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A405CB1EE63F6C00909639 /* Pokemon.swift */; };
+		61A405CE1EE642A000909639 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A405CD1EE642A000909639 /* Constants.swift */; };
+		61A405D01EE643A100909639 /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A405CF1EE643A100909639 /* MasterTableViewCell.swift */; };
+		61A405D31EE6467100909639 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A405D21EE6467100909639 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,15 +44,18 @@
 		6121258A1EE3F38100170EE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6121258C1EE3F38100170EE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6121258D1EE3F38100170EE1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6121258E1EE3F38100170EE1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		6121258F1EE3F38100170EE1 /* SwiftLearning-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftLearning-Bridging-Header.h"; sourceTree = "<group>"; };
 		612125941EE3F38100170EE1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		612125951EE3F38100170EE1 /* OmnipotentAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OmnipotentAppTests.swift; sourceTree = "<group>"; };
 		612125971EE3F38100170EE1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		612125981EE3F38100170EE1 /* OmnipotentAppUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OmnipotentAppUITests.swift; sourceTree = "<group>"; };
-		612125A41EE4EAD400170EE1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		612125A61EE4EADB00170EE1 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		612125A81EE4EAEA00170EE1 /* Candy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candy.swift; sourceTree = "<group>"; };
+		61A405BF1EE63BB900909639 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		61A405C51EE63C7600909639 /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
+		61A405C71EE63CA300909639 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
+		61A405C91EE63F2E00909639 /* PokemonConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonConstants.swift; sourceTree = "<group>"; };
+		61A405CB1EE63F6C00909639 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		61A405CD1EE642A000909639 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		61A405CF1EE643A100909639 /* MasterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
+		61A405D21EE6467100909639 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7102B2301C0BE93500497F95 /* SwiftLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7102B2471C0BE93500497F95 /* SwiftLearningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftLearningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7102B2521C0BE93500497F95 /* SwiftLearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftLearningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,10 +90,12 @@
 			isa = PBXGroup;
 			children = (
 				612125851EE3F38100170EE1 /* AppDelegate.swift */,
+				61A405D11EE6465C00909639 /* Controller */,
+				61A405C11EE63C0A00909639 /* API */,
+				61A405C21EE63C0A00909639 /* Helper */,
+				61A405C31EE63C0A00909639 /* Model */,
+				61A405C41EE63C0A00909639 /* View */,
 				612125891EE3F38100170EE1 /* Supporting Files */,
-				612125A41EE4EAD400170EE1 /* DetailViewController.swift */,
-				612125A61EE4EADB00170EE1 /* MasterViewController.swift */,
-				612125A81EE4EAEA00170EE1 /* Candy.swift */,
 			);
 			path = SwiftLearning;
 			sourceTree = "<group>";
@@ -94,11 +103,10 @@
 		612125891EE3F38100170EE1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				61A405BF1EE63BB900909639 /* Main.storyboard */,
 				6121258A1EE3F38100170EE1 /* Assets.xcassets */,
 				6121258B1EE3F38100170EE1 /* LaunchScreen.storyboard */,
 				6121258D1EE3F38100170EE1 /* Info.plist */,
-				6121258E1EE3F38100170EE1 /* Main.storyboard */,
-				6121258F1EE3F38100170EE1 /* SwiftLearning-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -119,6 +127,48 @@
 				612125981EE3F38100170EE1 /* OmnipotentAppUITests.swift */,
 			);
 			path = SwiftLearningUITests;
+			sourceTree = "<group>";
+		};
+		61A405C11EE63C0A00909639 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				61A405C51EE63C7600909639 /* LibraryAPI.swift */,
+				61A405C71EE63CA300909639 /* PersistencyManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		61A405C21EE63C0A00909639 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				61A405C91EE63F2E00909639 /* PokemonConstants.swift */,
+				61A405CD1EE642A000909639 /* Constants.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		61A405C31EE63C0A00909639 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				61A405CB1EE63F6C00909639 /* Pokemon.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		61A405C41EE63C0A00909639 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				61A405CF1EE643A100909639 /* MasterTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		61A405D11EE6465C00909639 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				61A405D21EE6467100909639 /* DetailViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		7102B2271C0BE93400497F95 = {
@@ -250,10 +300,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6121259B1EE3F38100170EE1 /* Assets.xcassets in Resources */,
+				61A405C01EE63BB900909639 /* Main.storyboard in Resources */,
 				6121259C1EE3F38100170EE1 /* LaunchScreen.storyboard in Resources */,
 				612125A21EE3F38100170EE1 /* Info.plist in Resources */,
 				612125A01EE3F38100170EE1 /* Info.plist in Resources */,
-				6121259E1EE3F38100170EE1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,10 +328,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61A405CC1EE63F6C00909639 /* Pokemon.swift in Sources */,
+				61A405C61EE63C7600909639 /* LibraryAPI.swift in Sources */,
+				61A405D01EE643A100909639 /* MasterTableViewCell.swift in Sources */,
+				61A405C81EE63CA300909639 /* PersistencyManager.swift in Sources */,
 				612125991EE3F38100170EE1 /* AppDelegate.swift in Sources */,
-				612125A91EE4EAEA00170EE1 /* Candy.swift in Sources */,
-				612125A51EE4EAD400170EE1 /* DetailViewController.swift in Sources */,
-				612125A71EE4EADB00170EE1 /* MasterViewController.swift in Sources */,
+				61A405CA1EE63F2E00909639 /* PokemonConstants.swift in Sources */,
+				61A405CE1EE642A000909639 /* Constants.swift in Sources */,
+				61A405D31EE6467100909639 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
