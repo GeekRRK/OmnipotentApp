@@ -20,6 +20,7 @@
 		61A405CE1EE642A000909639 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A405CD1EE642A000909639 /* Constants.swift */; };
 		61A405D01EE643A100909639 /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A405CF1EE643A100909639 /* MasterTableViewCell.swift */; };
 		61A405D31EE6467100909639 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A405D21EE6467100909639 /* DetailViewController.swift */; };
+		61A405D51EE6C6F300909639 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A405D41EE6C6F300909639 /* MasterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		61A405CD1EE642A000909639 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		61A405CF1EE643A100909639 /* MasterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
 		61A405D21EE6467100909639 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		61A405D41EE6C6F300909639 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		7102B2301C0BE93500497F95 /* SwiftLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7102B2471C0BE93500497F95 /* SwiftLearningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftLearningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7102B2521C0BE93500497F95 /* SwiftLearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftLearningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				61A405D21EE6467100909639 /* DetailViewController.swift */,
+				61A405D41EE6C6F300909639 /* MasterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				61A405D01EE643A100909639 /* MasterTableViewCell.swift in Sources */,
 				61A405C81EE63CA300909639 /* PersistencyManager.swift in Sources */,
 				612125991EE3F38100170EE1 /* AppDelegate.swift in Sources */,
+				61A405D51EE6C6F300909639 /* MasterViewController.swift in Sources */,
 				61A405CA1EE63F2E00909639 /* PokemonConstants.swift in Sources */,
 				61A405CE1EE642A000909639 /* Constants.swift in Sources */,
 				61A405D31EE6467100909639 /* DetailViewController.swift in Sources */,
