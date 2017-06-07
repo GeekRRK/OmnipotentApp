@@ -15,20 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
-        let splitViewController = self.window!.rootViewController as! UISplitViewController
-        let letNavController = splitViewController.viewControllers.first as! UINavigationController
-        let masterViewController = letNavController.topViewController as! MasterViewController
-        
-        let rightNavController = splitViewController.viewControllers.last as! UINavigationController
-        let detailViewController = rightNavController.topViewController as? DetailViewController
-        
-        let firstPokemon = masterViewController.filteredPokemons.first
-        detailViewController?.pokemon = firstPokemon
-        
-        masterViewController.delegate = detailViewController
-        
-        detailViewController?.navigationItem.leftItemsSupplementBackButton = true
-        detailViewController?.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         
         return true
     }
