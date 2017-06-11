@@ -3,7 +3,7 @@
 //  SwiftLearning
 //
 //  Created by Al on 6/11/17.
-//  Copyright © 2017 suorui. All rights reserved.
+//  Copyright © 2017 GeekRRK. All rights reserved.
 //
 
 import UIKit
