@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
         
-        
         return true
     }
     
