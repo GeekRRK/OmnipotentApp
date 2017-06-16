@@ -7,178 +7,120 @@
 //
 
 import UIKit
-import Contacts
-import ContactsUI
+import CoreData
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var tblContacts: UITableView!
+class ViewController: UIViewController, UITableViewDataSource {
     
-    var contacts = [CNContact]()
+    @IBOutlet weak var tableView: UITableView!
     
+    var people: [NSManagedObject] = []
+    
+    // MARK - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationController?.navigationBar.tintColor = UIColor(red: 241.0/255.0, green: 107.0/255.0, blue: 38.0/255.0, alpha: 1.0)
+        self.setupNavigationTitle()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        self.fetchCoreData(managedContext)
+    }
+    
+    func setupNavigationTitle() {
+        title = "The List"
+    }
+    
+    func fetchCoreData(_ managedContext: NSManagedObjectContext) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
         
-        configureTableView()
-    }
-    
-    @IBAction func addContact(_ sender: AnyObject) {
-        performSegue(withIdentifier: "idSegueAddContact", sender: self)
-    }
-    
-    // MARK: Custom functions
-    func configureTableView() {
-        tblContacts.delegate = self
-        tblContacts.dataSource = self
-        tblContacts.register(UINib(nibName: "ContactBirthdayCell", bundle: nil), forCellReuseIdentifier: "idCellContactBirthday")
-    }
-    
-    
-    /// Set ViewController class as the delegate of the AddContactViewControllerDelegate protocol
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier {
-            if identifier == "idSegueAddContact" {
-                let addContactViewController = segue.destination as! AddContactViewController
-                addContactViewController.delegate = self
-            }
+        do {
+            let results =
+                try managedContext.fetch(fetchRequest)
+            people = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
         }
-    }
-
-}
-
-extension ViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        
     }
     
-    
+    // MARK - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
+        return people.count
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "idCellContactBirthday") as! ContactBirthdayCell
+        let identifier: String = "cell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         
-        let currentContact = contacts[indexPath.row]
-        
-        cell.lblFullname.text = CNContactFormatter.string(from: currentContact, style: .fullName)
-        
-        if !currentContact.isKeyAvailable(CNContactBirthdayKey) || !currentContact.isKeyAvailable(CNContactImageDataKey) ||  !currentContact.isKeyAvailable(CNContactEmailAddressesKey) {
-            refetch(contact: currentContact, atIndexPath: indexPath)
-        } else {
-            // Set the birthday info.
-            if let birthday = currentContact.birthday {
-                cell.lblBirthday.text = birthday.asString
-            }
-            else {
-                cell.lblBirthday.text = "Not available birthday data"
-            }
-            
-            // Set the contact image.
-            if let imageData = currentContact.imageData {
-                cell.imgContactImage.image = UIImage(data: imageData)
-            }
-            
-            // Set the contact's home email address.
-            var homeEmailAddress: String!
-            for emailAddress in currentContact.emailAddresses {
-                if emailAddress.label == CNLabelHome {
-                    homeEmailAddress = emailAddress.value as String
-                    break
-                }
-            }
-            if let homeEmailAddress = homeEmailAddress {
-                cell.lblEmail.text = homeEmailAddress
-            } else {
-                cell.lblEmail.text = "Not available home email"
-            }
-        }
+        let person = people[indexPath.row]
+        cell.textLabel!.text = person.value(forKey: "name") as? String
         
         return cell
-        
-    }
-    
-    fileprivate func refetch(contact: CNContact, atIndexPath indexPath: IndexPath) {
-        AppDelegate.appDelegate.requestForAccess { (accessGranted) -> Void in
-            if accessGranted {
-                let keys = [CNContactFormatter.descriptorForRequiredKeys(for: CNContactFormatterStyle.fullName), CNContactEmailAddressesKey, CNContactBirthdayKey, CNContactImageDataKey] as [Any]
-                
-                do {
-                    let contactRefetched = try AppDelegate.appDelegate.contactStore.unifiedContact(withIdentifier: contact.identifier, keysToFetch: keys as! [CNKeyDescriptor])
-                    self.contacts[indexPath.row] = contactRefetched
-                    
-                    DispatchQueue.main.async {
-                        self.tblContacts.reloadRows(at: [indexPath], with: .automatic)
-                    }
-                }
-                catch {
-                    print("Unable to refetch the contact: \(contact)", separator: "", terminator: "\n")
-                }
-            }
-        }
-    }
-}
-
-extension ViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            contacts.remove(at: indexPath.row)
-            tblContacts.reloadData()
+        switch editingStyle {
+        case .delete:
+            // remove the deleted item from the model
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let managedContext = appDelegate.managedObjectContext
+            managedContext.delete(people[indexPath.row] as NSManagedObject)
+            do {
+                try managedContext.save()
+                people.remove(at: indexPath.row)
+            } catch let error as NSError  {
+                print("Could not save \(error), \(error.userInfo)")
+            }
+            
+            //tableView.reloadData()
+            // remove the deleted item from the `UITableView`
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        default:
+            return
+            
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedContact = contacts[indexPath.row]
+    // MARK - IBActions
+    @IBAction func addName(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "New Name", message: "Add a new name", preferredStyle: .alert)
         
-        let keys = [CNContactFormatter.descriptorForRequiredKeys(for: CNContactFormatterStyle.fullName), CNContactEmailAddressesKey, CNContactBirthdayKey, CNContactImageDataKey] as [Any]
+        let saveAction = UIAlertAction(title: "Save", style: .default, handler: {(action: UIAlertAction) -> Void in
+            let textField = alert.textFields!.first
+            self.saveName(textField!.text!)
+            self.tableView.reloadData()
+        })
         
-        if selectedContact.areKeysAvailable([CNContactViewController.descriptorForRequiredKeys()]) {
-            let contactViewController = CNContactViewController(for: selectedContact)
-            contactViewController.contactStore = AppDelegate.appDelegate.contactStore
-            contactViewController.displayedPropertyKeys = keys
-            navigationController?.pushViewController(contactViewController, animated: true)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {(action: UIAlertAction) -> Void in
+        })
+        
+        alert.addTextField {
+            (textField: UITextField) -> Void in
         }
-        else {
-            AppDelegate.appDelegate.requestForAccess(completionHandler: { (accessGranted) -> Void in
-                if accessGranted {
-                    do {
-                        let contactRefetched = try AppDelegate.appDelegate.contactStore.unifiedContact(withIdentifier: selectedContact.identifier, keysToFetch: [CNContactViewController.descriptorForRequiredKeys()])
-                        
-                        DispatchQueue.main.async {
-                            let contactViewController = CNContactViewController(for: contactRefetched)
-                            contactViewController.contactStore = AppDelegate.appDelegate.contactStore
-                            contactViewController.displayedPropertyKeys = keys
-                            self.navigationController?.pushViewController(contactViewController, animated: true)
-                        }
-                    }
-                    catch {
-                        print("Unable to refetch the selected contact.", separator: "", terminator: "\n")
-                    }
-                }
-            })
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK - CoreData func
+    func saveName(_ name: String) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let entity =  NSEntityDescription.entity(forEntityName: "Person",
+                                                 in:managedContext)
+        let person = NSManagedObject(entity: entity!,
+                                     insertInto: managedContext)
+        
+        person.setValue(name, forKey: "name")
+        
+        do {
+            try managedContext.save()
+            people.append(person)
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
         }
     }
+    
 }
-
-extension ViewController: AddContactViewControllerDelegate {
-    func didFetchContacts(_ contacts: [CNContact]) {
-        for contact in contacts {
-            self.contacts.append(contact)
-        }
-        
-        tblContacts.reloadData()
-    }
-}
-
 
