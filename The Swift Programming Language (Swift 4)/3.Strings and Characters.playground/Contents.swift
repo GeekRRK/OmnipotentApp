@@ -74,8 +74,76 @@ let enclosedEAcute: Character = "\u{E9}\u{20DD}"
 
 let regionalIndicatorForUS: Character = "\u{1F1FA}\u{1F1F8}"
 
+let unusualMenagerie = "Koala 🐨, Snail 🐌, Penguin 🐧, Dromedary 🐪"
+print("unusualMenagerie has \(unusualMenagerie.count) characters")
 
+// Note that Swift’s use of extended grapheme clusters for Character values means that string concatenation and modification may not always affect a string’s character count.
+var word = "cafe"
+print("the number of characters in \(word) is \(word.count)")
+word += "\u{301}"    // COMBINING ACUTE ACCENT, U+0301
+print("the number of characters in \(word) is \(word.count)")
 
+// Extended grapheme clusters can be composed of multiple Unicode scalars. This means that different characters—and different representations of the same character—can require different amounts of memory to store. Because of this, characters in Swift do not each take up the same amount of memory within a string’s representation. As a result, the number of characters in a string cannot be calculated without iterating through the string to determine its extended grapheme cluster boundaries. If you are working with particularly long string values, be aware that the count property must iterate over the Unicode scalars in the entire string in order to determine the characters for that string.
+// The count of the characters returned by the count property is not always the same as the length property of an NSString that contains the same characters. The length of an NSString is based on the number of 16-bit code units within the string’s UTF-16 representation and not the number of Unicode extended grapheme clusters within the string.
 
+let greeting = "Guten Tag!"
+greeting[greeting.startIndex]
+greeting[greeting.index(before: greeting.endIndex)]
+greeting[greeting.index(after: greeting.startIndex)]
+let index = greeting.index(greeting.startIndex, offsetBy: 7)
+greeting[index]
 
+for index in greeting.indices {
+    print("\(greeting[index]) ", terminator: "")
+}
 
+// You can use the startIndex and endIndex properties and the index(before:), index(after:), and index(_:offsetBy:) methods on any type that conforms to the Collection protocol. This includes String, as shown here, as well as collection types such as Array, Dictionary, and Set.
+
+var welcome2 = "hello"
+welcome2.insert("!", at: welcome2.endIndex)
+welcome2.insert(contentsOf: " there", at: welcome2.index(before: welcome2.endIndex))
+
+welcome2.remove(at: welcome2.index(before: welcome2.endIndex))
+let range = welcome2.index(welcome2.endIndex, offsetBy: -6)..<welcome2.endIndex
+welcome2.removeSubrange(range)
+
+// You can use the the insert(_:at:), insert(contentsOf:at:), remove(at:), and removeSubrange(_:) methods on any type that conforms to the RangeReplaceableCollection protocol. This includes String, as shown here, as well as collection types such as Array, Dictionary, and Set.
+
+// When you get a substring from a string—for example, using a subscript or a method like prefix(_:)—the result is an instance of Substring, not another string. Substrings in Swift have most of the same methods as strings, which means you can work with substrings like strings. Unlike strings, you use substrings for only a short amount of time while performing actions on a string. When you’re ready to store the result for a longer time, you convert the substring to an instance of String. For example:
+let greeting2 = "Hello, world!"
+let index2 = greeting2.index(of: ",") ?? greeting2.endIndex
+let beginning = greeting2[..<index2]
+let newString = String(beginning)
+
+// Like strings, each substring has a region of memory where the characters that make up the substring are stored. The difference between strings and substrings is that, as a performance optimization, a substring can re-use part of the memory that’s used to store the original string, or part of the memory that’s used to store another substring. (Strings have a similar optimization, but if two strings share memory, they are equal.) This performance optimization means you don’t have to pay the performance cost of copying memory until you modify either the string or substring. As mentioned above, substrings aren’t suitable for long-term storage—because they re-use the storage of the original string, the entire original string must be kept in memory as long as any of its substrings are being used.
+// In the example above, greeting is a string, which means it has a region of memory where the characters that make up the string are stored. Because beginning is a substring of greeting, it re-uses the memory that greeting uses. In contrast, newString is a string—when it’s created from the substring, it has its own storage.
+
+// Both String and Substring conform to the StringProtocol protocol. If you’re writing code that manipulates string data, accepting a StringProtocol value lets you pass that string data as either a String or Substring value.
+
+// Two String values (or two Character values) are considered equal if their extended grapheme clusters are canonically equivalent. Extended grapheme clusters are canonically equivalent if they have the same linguistic meaning and appearance, even if they are composed from different Unicode scalars behind the scenes.
+// For example, LATIN SMALL LETTER E WITH ACUTE (U+00E9) is canonically equivalent to LATIN SMALL LETTER E (U+0065) followed by COMBINING ACUTE ACCENT (U+0301). Both of these extended grapheme clusters are valid ways to represent the character é, and so they are considered to be canonically equivalent:
+// Conversely, LATIN CAPITAL LETTER A (U+0041, or "A"), as used in English, is not equivalent to CYRILLIC CAPITAL LETTER A (U+0410, or "А"), as used in Russian. The characters are visually similar, but do not have the same linguistic meaning:
+// String and character comparisons in Swift are not locale-sensitive.
+
+// The hasPrefix(_:) and hasSuffix(_:) methods perform a character-by-character canonical equivalence comparison between the extended grapheme clusters in each string.
+
+print("")
+let dogString = "Dog‼🐶"
+for codeUnit in dogString.utf8 {
+    print("\(codeUnit) ", terminator: "")
+}
+print("")
+
+for codeUnit in dogString.utf16 {
+    print("\(codeUnit) ", terminator: "")
+}
+print("")
+
+for scalar in dogString.unicodeScalars {
+    print("\(scalar.value) ", terminator: "")
+}
+print("")
+
+for scalar in dogString.unicodeScalars {
+    print("\(scalar) ")
+}
