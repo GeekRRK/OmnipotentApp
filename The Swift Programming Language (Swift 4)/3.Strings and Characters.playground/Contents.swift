@@ -64,11 +64,11 @@ welcome.append(exclamationMark)
  An arbitrary Unicode scalar, written as \u{n}, where n is a 1–8 digit hexadecimal number with a value equal to a valid Unicode code point
  */
 
-let eAcute: Character = "\u{E9}"                         // é
-let combinedEAcute: Character = "\u{65}\u{301}"          // e followed by
+let eAcute: Character = "\u{E9}"
+let combinedEAcute: Character = "\u{65}\u{301}"
 
-let precomposed: Character = "\u{D55C}"                  // 한
-let decomposed: Character = "\u{1112}\u{1161}\u{11AB}"   // ᄒ, ᅡ, ᆫ
+let precomposed: Character = "\u{D55C}"
+let decomposed: Character = "\u{1112}\u{1161}\u{11AB}"
 
 let enclosedEAcute: Character = "\u{E9}\u{20DD}"
 

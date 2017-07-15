@@ -1,4 +1,4 @@
-var `var` = "keyword surround within backticks"
+var `var` = "keyword surrounded within backticks"
 
 // print(_:separator:terminator:)
 print("someValue", terminator: "")
@@ -29,11 +29,10 @@ let maxValue = UInt8.max  // maxValue is equal to 255, and is of type UInt8
  Decimal floats can also have an optional exponent, indicated by an uppercase or lowercase e; hexadecimal floats must have an exponent, indicated by an uppercase or lowercase p.
  
  For decimal numbers with an exponent of exp, the base number is multiplied by 10exp:
- 
  1.25e2 means 1.25 x 102, or 125.0.
  1.25e-2 means 1.25 x 10-2, or 0.0125.
- For hexadecimal numbers with an exponent of exp, the base number is multiplied by 2exp:
  
+ For hexadecimal numbers with an exponent of exp, the base number is multiplied by 2exp:
  0xFp2 means 15 x 22, or 60.0.
  0xFp-2 means 15 x 2-2, or 3.75.
  */

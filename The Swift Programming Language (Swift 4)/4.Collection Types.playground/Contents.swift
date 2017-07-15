@@ -41,7 +41,7 @@ for (index, value) in shoppingList.enumerated() {
 // Because the Hashable protocol conforms to Equatable, conforming types must also provide an implementation of the equals operator (==). The Equatable protocol requires any conforming implementation of == to be an equivalence relation. That is, an implementation of == must satisfy the following three conditions, for all values a, b, and c:
 // a == a (Reflexivity)
 // a == b implies b == a (Symmetry)
-// a == b && b == c implies a == c (Transitivity)
+// a == b && b == c implies a == c (Transitivity)`
 
 // The type of a Swift set is written as Set<Element>, where Element is the type that the set is allowed to store. Unlike arrays, sets do not have an equivalent shorthand form.
 var letters = Set<Character>()
