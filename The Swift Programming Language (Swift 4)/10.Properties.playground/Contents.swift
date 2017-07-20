@@ -79,22 +79,7 @@ let initialSquareCenter = square.center
 square.center = Point(x: 15.0, y: 15.0)
 print("square.origin is now at (\(square.origin.x), \(square.origin.y))")
 
-// If a computed property’s setter does not define a name for the new value to be set, a default name of newValue is used. Here’s an alternative version of the Rect structure, which takes advantage of this shorthand notation:
-struct AlternativeRect {
-    var origin = Point()
-    var size = Size()
-    var center: Point {
-        get {
-            let centerX = origin.x + (size.width / 2)
-            let centerY = origin.y + (size.height / 2)
-            return Point(x: centerX, y: centerY)
-        }
-        set {
-            origin.x = newValue.x - (size.width / 2)
-            origin.y = newValue.y - (size.height / 2)
-        }
-    }
-}
+// If a computed property’s setter does not define a name for the new value to be set, a default name of newValue is used.
 
 // A computed property with a getter but no setter is known as a read-only computed property. A read-only computed property always returns a value, and can be accessed through dot syntax, but cannot be set to a different value.
 

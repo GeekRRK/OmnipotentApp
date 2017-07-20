@@ -1,4 +1,4 @@
-// Strictly speaking, this version of the greet(person:) function does still return a value, even though no return value is defined. Functions without a defined return type return a special value of type Void. This is simply an empty tuple, which is written as ().
+// Functions without a defined return type return a special value of type Void. This is simply an empty tuple, which is written as ().
 
 func minMax(array: [Int]) -> (min: Int, max: Int) {
     var currentMin = array[0]
@@ -115,15 +115,15 @@ while currentValue != 0 {
 print("zero!")
 
 // Nested functions are hidden from the outside world by default, but can still be called and used by their enclosing function. An enclosing function can also return one of its nested functions to allow the nested function to be used in another scope.
-func chooseStepFunction(backward: Bool) -> (Int) -> Int {
+func chooseStepFunction2(backward: Bool) -> (Int) -> Int {
     func stepForward(input: Int) -> Int { return input + 1 }
     func stepBackward(input: Int) -> Int { return input - 1 }
     return backward ? stepBackward : stepForward
 }
-var currentValue = -4
-let moveNearerToZero = chooseStepFunction(backward: currentValue > 0)
+var currentValue2 = -4
+let moveNearerToZero2 = chooseStepFunction2(backward: currentValue2 > 0)
 while currentValue != 0 {
-    print("\(currentValue)... ")
-    currentValue = moveNearerToZero(currentValue)
+    print("\(currentValue2)... ")
+    currentValue = moveNearerToZero2(currentValue2)
 }
 print("zero!")
