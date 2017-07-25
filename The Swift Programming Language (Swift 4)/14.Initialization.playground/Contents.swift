@@ -81,12 +81,12 @@ beetsQuestion.response = "I also like beets. (But not with cheese.)"
  */
 
 // Swift provides a default initializer for any structure or class that provides default values for all of its properties and does not provide at least one initializer itself. The default initializer simply creates a new instance with all of its properties set to their default values.
-class ShoppingListItem {
+class ShoppingListItem0 {
     var name: String?
     var quantity = 1
     var purchased = false
 }
-var item = ShoppingListItem()
+var item = ShoppingListItem0()
 // Because all properties of the ShoppingListItem class have default values, and because it is a base class with no superclass, ShoppingListItem automatically gains a default initializer implementation that creates a new instance with all of its properties set to their default values. (The name property is an optional String property, and so it automatically receives a default value of nil, even though this value is not written in the code.)
 
 // Structure types automatically receive a memberwise initializer if they do not define any of their own custom initializers. Unlike a default initializer, the structure receives a memberwise initializer even if it has stored properties that do not have default values.
@@ -102,9 +102,6 @@ let twoByTwo = Size(width: 2.0, height: 2.0)
 // Note that if you define a custom initializer for a value type, you will no longer have access to the default initializer (or the memberwise initializer, if it is a structure) for that type. This constraint prevents a situation in which additional essential setup provided in a more complex initializer is accidentally circumvented by someone using one of the automatic initializers.
 // If you want your custom value type to be initializable with the default initializer and memberwise initializer, and also with your own custom initializers, write your custom initializers in an extension rather than as part of the value type’s original implementation.
 
-struct Size {
-    var width = 0.0, height = 0.0
-}
 struct Point {
     var x = 0.0, y = 0.0
 }
