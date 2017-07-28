@@ -443,3 +443,26 @@ print("And here's a random Boolean: \(generator2.randomBool())")
 
 // You can use protocol extensions to provide a default implementation to any method or computed property requirement of that protocol. If a conforming type provides its own implementation of a required method or property, that implementation will be used instead of the one provided by the extension.
 
+extension PrettyTextRepresentable  {
+    var prettyTextualDescription: String {
+        return textualDescription
+    }
+}
+
+// When you define a protocol extension, you can specify constraints that conforming types must satisfy before the methods and properties of the extension are available. You write these constraints after the name of the protocol you’re extending using a generic where clause.
+
+extension Collection where Iterator.Element: TextRepresentable {
+    var textualDescription: String {
+        let itemsAsText = self.map { $0.textualDescription }
+        return "[" + itemsAsText.joined(separator: ", ") + "]"
+    }
+}
+
+let murrayTheHamster = Hamster(name: "Murray")
+let morganTheHamster = Hamster(name: "Morgan")
+let mauriceTheHamster = Hamster(name: "Maurice")
+let hamsters = [murrayTheHamster, morganTheHamster, mauriceTheHamster]
+
+print(hamsters.textualDescription)
+
+// If a conforming type satisfies the requirements for multiple constrained extensions that provide implementations for the same method or property, Swift will use the implementation corresponding to the most specialized constraints.
