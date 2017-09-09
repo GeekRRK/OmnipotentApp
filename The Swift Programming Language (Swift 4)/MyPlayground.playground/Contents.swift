@@ -1,39 +1,30 @@
-struct BlackjackCard {
-    enum Suit: Character {
-        case spades = "♠", hearts = "♡", diamonds = "♢", clubs = "♣"
+extension Int {
+    enum Kind {
+        case negative, zero, positive
     }
-    
-    enum Rank: Int {
-        case two = 2, three, four, five, six, seven, eight, nine, ten
-        case jack, queen, king, ace
-        struct Values {
-            let first: Int, second: Int?
+    var kind: Kind {
+        switch self {
+        case 0:
+            return .zero
+        case let x where x > 0:
+            return .positive
+        default:
+            return .negative
         }
-        var values: Values {
-            switch self {
-            case .ace:
-                return Values(first: 1, second: 11)
-            case .jack, .queen, .king:
-                return Values(first: 10, second: nil)
-            default:
-                return Values(first: self.rawValue, second: nil)
-            }
-        }
-    }
-    
-    let rank: Rank, suit: Suit
-    var description: String {
-        var output = "suit is \(suit.rawValue),"
-        output += " value is \(rank.values.first)"
-        if let second = rank.values.second {
-            output += " or \(second)"
-        }
-        return output
     }
 }
 
-let theAceOfSpades = BlackjackCard(rank: .ace, suit: .spades)
-print("theAceOfSpades: \(theAceOfSpades.description)")
-
-let heartsSymbol = BlackjackCard.Suit.hearts.rawValue
-
+func printIntegerKinds(_ numbers: [Int]) {
+    for number in numbers {
+        switch number.kind {
+        case .negative:
+            print("- ", terminator: "")
+        case .zero:
+            print("0 ", terminator: "")
+        case .positive:
+            print("+ ", terminator: "")
+        }
+    }
+    print("")
+}
+printIntegerKinds([3, 19, -27, 0, -6, 0, 7])
