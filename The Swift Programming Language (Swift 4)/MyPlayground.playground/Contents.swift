@@ -1,30 +1,46 @@
-extension Int {
-    enum Kind {
-        case negative, zero, positive
-    }
-    var kind: Kind {
-        switch self {
-        case 0:
-            return .zero
-        case let x where x > 0:
-            return .positive
-        default:
-            return .negative
+import Foundation
+@objc protocol CounterDataSource {
+    @objc optional func increment(forCount count: Int) -> Int
+    @objc optional var fixedIncrement: Int { get }
+}
+
+class Counter {
+    var count = 0
+    var dataSource: CounterDataSource?
+    func increment() {
+        if let amount = dataSource?.increment(forCount: count) {
+            count += amount
+        } else if let amount = dataSource?.fixedIncrement {
+            count += amount
         }
     }
 }
 
-func printIntegerKinds(_ numbers: [Int]) {
-    for number in numbers {
-        switch number.kind {
-        case .negative:
-            print("- ", terminator: "")
-        case .zero:
-            print("0 ", terminator: "")
-        case .positive:
-            print("+ ", terminator: "")
+class ThreeSource: NSObject, CounterDataSource {
+    let fixedIncrement = 3
+}
+var counter = Counter()
+counter.dataSource = ThreeSource()
+for _ in 1...4 {
+    counter.increment()
+    print(counter.count)
+}
+
+class TowardsZeroSource: NSObject, CounterDataSource {
+    func increment(forCount count: Int) -> Int {
+        if count == 0 {
+            return 0
+        } else if count < 0 {
+            return 1
+        } else {
+            return -1
         }
     }
-    print("")
 }
-printIntegerKinds([3, 19, -27, 0, -6, 0, 7])
+counter.count = -4
+counter.dataSource = TowardsZeroSource()
+for _ in 1...5 {
+    counter.increment()
+    print(counter.count)
+}
+
